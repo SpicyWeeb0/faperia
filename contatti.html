@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="cont.title">Contatti — Faperia</title>
+  <meta name="description" data-i18n-attr="content:cont.meta" content="Prenota un audit Faperia o scrivici per qualsiasi domanda." />
+
+  <script>
+    (function(){
+      try {
+        var l = localStorage.getItem('faperia-lang');
+        if (l !== 'en' && l !== 'it') l = 'it';
+        document.documentElement.setAttribute('lang', l);
+      } catch(e) {}
+    })();
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+      <nav class="nav" id="mainNav">
+        <a href="cosa-facciamo.html" class="nav-link" data-i18n="nav.cosa">Cosa facciamo</a>
+        <a href="offerte.html" class="nav-link" data-i18n="nav.offerte">Offerte</a>
+        <a href="come-funziona.html" class="nav-link" data-i18n="nav.come">Come funziona</a>
+        <a href="chi-siamo.html" class="nav-link" data-i18n="nav.chi">Chi siamo</a>
+        <a href="contatti.html" class="nav-link active" data-i18n="nav.contatti">Contatti</a>
+        <div class="lang-toggle">
+          <button data-lang="it" class="active">IT</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-i18n="cont.hero.h1">Parliamone.</h1>
+        <p class="lead" data-i18n="cont.hero.lead">Compila il modulo qui sotto per prenotare un audit, oppure scrivici direttamente. Rispondiamo entro <strong>24 ore lavorative</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Form + info -->
+    <section class="reveal">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <h2 data-i18n="cont.form.h">Scrivi a Faperia</h2>
+            <form id="contactForm" class="form" novalidate>
+              <div class="form-field">
+                <label for="intent" data-i18n="cont.form.intent.l">Cosa ti serve</label>
+                <select id="intent" name="intent" required>
+                  <option value="" disabled selected data-i18n="cont.form.intent.placeholder">Seleziona…</option>
+                  <option data-i18n="cont.form.intent.o1">Voglio prenotare l’audit (€250)</option>
+                  <option data-i18n="cont.form.intent.o2">Una domanda generale</option>
+                  <option data-i18n="cont.form.intent.o3">Sono un commercialista o un partner</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="name" data-i18n="cont.form.name.l">Nome e cognome</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-field">
+                  <label for="email" data-i18n="cont.form.email.l">Email</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="business" data-i18n="cont.form.business.l">Nome dell’azienda</label>
+                <input type="text" id="business" name="business" />
+              </div>
+
+              <div class="form-field">
+                <label for="message" data-i18n="cont.form.message.l">Raccontaci in due righe</label>
+                <textarea id="message" name="message" data-i18n-attr="placeholder:cont.form.message.p" placeholder="Cosa fa la tua azienda e cosa ti pesa di più oggi?"></textarea>
+              </div>
+
+              <p class="form-note" data-i18n="cont.form.note">Cliccando “Invia” apriamo il tuo client di posta con il messaggio precompilato. Nessun dato viene salvato sul nostro server.</p>
+
+              <button type="submit" class="btn btn-primary btn-arrow" style="align-self:flex-start;" data-i18n="cont.form.submit">Invia richiesta</button>
+
+              <p class="form-status" id="formStatus"></p>
+            </form>
+          </div>
+
+          <aside class="contact-info">
+            <div class="info-block">
+              <h3 data-i18n="cont.info.email.h">Email</h3>
+              <p><a href="mailto:hello@faperia.it">hello@faperia.it</a></p>
+              <p data-i18n="cont.info.email.p">Risposta entro 24 ore lavorative.</p>
+            </div>
+            <div class="info-block">
+              <h3 data-i18n="cont.info.studio.h">Studio</h3>
+              <p data-i18n="cont.info.studio.p">Umbria, Italia. Visite su appuntamento.</p>
+            </div>
+            <div class="info-block">
+              <h3 data-i18n="cont.info.partners.h">Commercialisti e partner</h3>
+              <p data-i18n="cont.info.partners.p">Lavoriamo volentieri con commercialisti e consulenti che vogliono offrire automazione ai loro clienti.</p>
+            </div>
+            <div class="info-block">
+              <h3 data-i18n="cont.info.social.h">Social</h3>
+              <p>
+                <a href="https://www.linkedin.com/company/faperia">LinkedIn</a> ·
+                <a href="https://www.instagram.com/faperia">Instagram</a>
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+          <p data-i18n="footer.tagline">Digitale, automazione, AI per le PMI italiane.</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col1">Sito</h4>
+          <ul>
+            <li><a href="cosa-facciamo.html" data-i18n="nav.cosa">Cosa facciamo</a></li>
+            <li><a href="offerte.html" data-i18n="nav.offerte">Offerte</a></li>
+            <li><a href="come-funziona.html" data-i18n="nav.come">Come funziona</a></li>
+            <li><a href="chi-siamo.html" data-i18n="nav.chi">Chi siamo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col2">Contatti</h4>
+          <ul>
+            <li><a href="mailto:hello@faperia.it">hello@faperia.it</a></li>
+            <li><a href="contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><a href="https://www.linkedin.com/company/faperia" data-i18n="footer.linkedin">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col3">Studio</h4>
+          <ul>
+            <li><span data-i18n="footer.studio">Umbria, Italia</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copy">© 2026 Faperia. Tutti i diritti riservati.</span>
+        <span><a href="#" data-i18n="footer.privacy">Privacy</a> · <a href="#" data-i18n="footer.terms">Termini</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

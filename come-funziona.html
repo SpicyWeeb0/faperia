@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="come.title">Come funziona — Faperia</title>
+  <meta name="description" data-i18n-attr="content:come.meta" content="Il processo dell’audit Faperia: cinque giorni, dal primo contatto al report finale." />
+
+  <script>
+    (function(){
+      try {
+        var l = localStorage.getItem('faperia-lang');
+        if (l !== 'en' && l !== 'it') l = 'it';
+        document.documentElement.setAttribute('lang', l);
+      } catch(e) {}
+    })();
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+      <nav class="nav" id="mainNav">
+        <a href="cosa-facciamo.html" class="nav-link" data-i18n="nav.cosa">Cosa facciamo</a>
+        <a href="offerte.html" class="nav-link" data-i18n="nav.offerte">Offerte</a>
+        <a href="come-funziona.html" class="nav-link active" data-i18n="nav.come">Come funziona</a>
+        <a href="chi-siamo.html" class="nav-link" data-i18n="nav.chi">Chi siamo</a>
+        <a href="contatti.html" class="nav-link" data-i18n="nav.contatti">Contatti</a>
+        <div class="lang-toggle">
+          <button data-lang="it" class="active">IT</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-i18n="come.hero.h1">Cinque giorni dal primo contatto al report.</h1>
+        <p class="lead" data-i18n="come.hero.lead">Un processo strutturato, pensato per consegnarti decisioni chiare — non solo osservazioni. Ogni passaggio ha uno scopo, un tempo definito e un output preciso.</p>
+      </div>
+    </section>
+
+    <!-- Process steps -->
+    <section class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="come.steps.eyebrow">IL PROCESSO</p>
+          <h2 data-i18n="come.steps.heading">Cinque passaggi, niente sorprese.</h2>
+        </div>
+
+        <div class="process">
+          <div class="process-step">
+            <div class="num">01</div>
+            <div>
+              <h3 data-i18n="come.s1.t">Prenotazione e pagamento</h3>
+              <p data-i18n="come.s1.p">Compili un breve modulo di contatto. Confermiamo l’audit e processiamo il pagamento di <strong>€250</strong>. Subito dopo ricevi il pre-questionario.</p>
+            </div>
+            <div class="duration" data-i18n="come.s1.d">GIORNO 0</div>
+          </div>
+
+          <div class="process-step">
+            <div class="num">02</div>
+            <div>
+              <h3 data-i18n="come.s2.t">Pre-form (5 domande, 3 minuti)</h3>
+              <p data-i18n="come.s2.p">Cinque domande mirate per capire ruolo, dimensione del team, settore e urgenza. Il pre-form decide quale questionario diagnostico ricevi: combinato, oppure split tra titolare e operativi.</p>
+            </div>
+            <div class="duration" data-i18n="come.s2.d">GIORNO 1</div>
+          </div>
+
+          <div class="process-step">
+            <div class="num">03</div>
+            <div>
+              <h3 data-i18n="come.s3.t">Questionario diagnostico (~20 minuti)</h3>
+              <p data-i18n="come.s3.p">Un questionario di 20–29 domande sul tuo business: contesto, strumenti, dolori reali, errori ricorrenti, passaggi manuali tra sistemi, dove vorresti andare. Niente gergo, scrittura come la useresti tu.</p>
+            </div>
+            <div class="duration" data-i18n="come.s3.d">GIORNI 1–2</div>
+          </div>
+
+          <div class="process-step">
+            <div class="num">04</div>
+            <div>
+              <h3 data-i18n="come.s4.t">Discovery call (90 minuti)</h3>
+              <p data-i18n="come.s4.p">Un’ora e mezza insieme — video, telefono, in azienda o in studio in Umbria. Camminiamo dentro al business: come funziona, dove si forma l’attrito, cosa il questionario non ha catturato. Esce sempre qualcosa che il modulo da solo non vede.</p>
+            </div>
+            <div class="duration" data-i18n="come.s4.d">GIORNO 3</div>
+          </div>
+
+          <div class="process-step">
+            <div class="num">05</div>
+            <div>
+              <h3 data-i18n="come.s5.t">Analisi e report scritto</h3>
+              <p data-i18n="come.s5.p">Mappiamo i flussi che hai descritto, identifichiamo dove si formano i colli di bottiglia, calcoliamo il loro costo con i tuoi numeri reali. Ricevi un report di 6–8 pagine: tre colli di bottiglia, ROI per ognuno, raccomandazioni concrete — anche cosa puoi fare da solo, senza di noi.</p>
+            </div>
+            <div class="duration" data-i18n="come.s5.d">GIORNI 4–5</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Method principles -->
+    <section class="section-alt reveal">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="come.method.eyebrow">IL METODO</p>
+          <h2 data-i18n="come.method.heading">Quattro principi che non neghiamo.</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature">
+            <h4 data-i18n="come.m1.h">La voce del cliente, sopra ogni cosa</h4>
+            <p data-i18n="come.m1.b">Quando una checkbox basterebbe, chiediamo comunque una risposta libera. È lì che si vede come pensi davvero al tuo business.</p>
+          </div>
+          <div class="feature">
+            <h4 data-i18n="come.m2.h">Numeri tuoi, non nostri</h4>
+            <p data-i18n="come.m2.b">I costi nel report sono calcolati con la tariffa oraria, la frequenza degli errori e il loro costo che hai confermato tu durante la call. Mai inflazionati.</p>
+          </div>
+          <div class="feature">
+            <h4 data-i18n="come.m3.h">Onesti su cosa non facciamo</h4>
+            <p data-i18n="come.m3.b">L’audit copre il livello operativo. Non tocca strategia, posizionamento o pianificazione finanziaria. Quando il problema non è nel nostro perimetro, lo diciamo.</p>
+          </div>
+          <div class="feature">
+            <h4 data-i18n="come.m4.h">Confidenza onesta</h4>
+            <p data-i18n="come.m4.b">Ogni stima nel report ha un livello di confidenza dichiarato — alta, media o bassa. Una bassa confidenza dichiarata è meglio di un’alta gonfiata.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pull quote -->
+    <section class="reveal">
+      <div class="container">
+        <blockquote class="pull-quote" data-i18n="come.quote">L’audit di Faperia non è un checklist generico. Quello che ti consegniamo è quello che abbiamo trovato nel tuo business, non un template applicato.</blockquote>
+        <p class="pull-quote-cite" data-i18n="come.quote.cite">Dal template del report cliente — v1</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+      <div class="container">
+        <div class="cta-card">
+          <h2 data-i18n="come.cta.h">Cinque giorni. Tre colli di bottiglia. Una decisione chiara.</h2>
+          <p data-i18n="come.cta.p">L’audit è il modo a basso rischio per scoprire se Faperia fa per te.</p>
+          <div class="cta-group" style="justify-content:center;">
+            <a href="contatti.html" class="btn btn-primary btn-arrow" data-i18n="cta.book">Prenota l’audit</a>
+            <a href="offerte.html" class="btn btn-outline" data-i18n="cta.see-offers">Vedi le offerte</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+          <p data-i18n="footer.tagline">Digitale, automazione, AI per le PMI italiane.</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col1">Sito</h4>
+          <ul>
+            <li><a href="cosa-facciamo.html" data-i18n="nav.cosa">Cosa facciamo</a></li>
+            <li><a href="offerte.html" data-i18n="nav.offerte">Offerte</a></li>
+            <li><a href="come-funziona.html" data-i18n="nav.come">Come funziona</a></li>
+            <li><a href="chi-siamo.html" data-i18n="nav.chi">Chi siamo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col2">Contatti</h4>
+          <ul>
+            <li><a href="mailto:hello@faperia.it">hello@faperia.it</a></li>
+            <li><a href="contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><a href="https://www.linkedin.com/company/faperia" data-i18n="footer.linkedin">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col3">Studio</h4>
+          <ul>
+            <li><span data-i18n="footer.studio">Umbria, Italia</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copy">© 2026 Faperia. Tutti i diritti riservati.</span>
+        <span><a href="#" data-i18n="footer.privacy">Privacy</a> · <a href="#" data-i18n="footer.terms">Termini</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="chi.title">Chi siamo — Faperia</title>
+  <meta name="description" data-i18n-attr="content:chi.meta" content="Faperia: visione, voce, e il modo in cui scegliamo di lavorare con le PMI italiane." />
+
+  <script>
+    (function(){
+      try {
+        var l = localStorage.getItem('faperia-lang');
+        if (l !== 'en' && l !== 'it') l = 'it';
+        document.documentElement.setAttribute('lang', l);
+      } catch(e) {}
+    })();
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+      <nav class="nav" id="mainNav">
+        <a href="cosa-facciamo.html" class="nav-link" data-i18n="nav.cosa">Cosa facciamo</a>
+        <a href="offerte.html" class="nav-link" data-i18n="nav.offerte">Offerte</a>
+        <a href="come-funziona.html" class="nav-link" data-i18n="nav.come">Come funziona</a>
+        <a href="chi-siamo.html" class="nav-link active" data-i18n="nav.chi">Chi siamo</a>
+        <a href="contatti.html" class="nav-link" data-i18n="nav.contatti">Contatti</a>
+        <div class="lang-toggle">
+          <button data-lang="it" class="active">IT</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-i18n="chi.hero.h1">Pratici, italiani, concentrati sul risultato.</h1>
+        <p class="lead" data-i18n="chi.hero.lead">Faperia esiste per una ragione semplice: le PMI italiane meritano gli stessi vantaggi operativi che le grandi aziende danno per scontati — senza il prezzo, la complessità o il gergo da consulenti.</p>
+      </div>
+    </section>
+
+    <!-- Vision -->
+    <section class="reveal">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="eyebrow" data-i18n="chi.vision.eyebrow">LA VISIONE</p>
+            <h2 data-i18n="chi.vision.h">Trasformiamo il lavoro quotidiano.</h2>
+          </div>
+          <div>
+            <p data-i18n="chi.vision.p1">Le PMI italiane sono la spina dorsale dell’economia del paese. Eppure passano ancora ore ogni settimana su lavoro manuale ripetitivo: rincorrere fatture, copiare dati tra strumenti, rispondere alle stesse domande, reinserire informazioni che dovrebbero già esistere da qualche parte.</p>
+            <p data-i18n="chi.vision.p2">Il software pronto raramente calza. La consulenza enterprise è fuori portata. Risultato: un divario di produttività che si allarga ogni anno. Faperia esiste per chiudere quel divario, una routine alla volta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Differentiators -->
+    <section class="section-alt reveal">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="chi.diff.eyebrow">COME LAVORIAMO</p>
+          <h2 data-i18n="chi.diff.h">Cinque scelte che facciamo, ogni volta.</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature">
+            <h4 data-i18n="chi.d1.h">Embedded, non bolted on</h4>
+            <p data-i18n="chi.d1.b">Costruiamo soluzioni che vivono dentro i flussi reali, non in sistemi paralleli che il tuo team deve ricordarsi di usare.</p>
+          </div>
+          <div class="feature">
+            <h4 data-i18n="chi.d2.h">Outcome-first</h4>
+            <p data-i18n="chi.d2.b">Ogni intervento è misurato su un risultato concreto: ore restituite, errori ridotti, tempo di risposta tagliato, ricavi catturati.</p>
+          </div>
+          <div class="feature">
+            <h4 data-i18n="chi.d3.h">Contesto italiano</h4>
+            <p data-i18n="chi.d3.b">Conosciamo lo stack che usate davvero — fatturazione elettronica, SDI, gestionali, sistemi bancari regionali — e progettiamo intorno.</p>
+          </div>
+          <div class="feature">
+            <h4 data-i18n="chi.d4.h">AI dove serve, automazione semplice quando basta</h4>
+            <p data-i18n="chi.d4.b">Usiamo AI quando si guadagna lo spazio. Quando un’automazione semplice basta, spediamo un’automazione semplice.</p>
+          </div>
+          <div class="feature">
+            <h4 data-i18n="chi.d5.h">Documentato, tuo, fatto per crescere</h4>
+            <p data-i18n="chi.d5.b">Le soluzioni sono documentate, di proprietà del cliente e progettate per evolversi insieme al business. Niente lock-in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Voice -->
+    <section class="reveal">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="eyebrow" data-i18n="chi.voice.eyebrow">LA VOCE</p>
+            <h2 data-i18n="chi.voice.h">Pratici, mai gridati.</h2>
+            <p data-i18n="chi.voice.p">Niente parole gonfiate. Niente punti esclamativi. I numeri parlano da soli, e il valore si vede nel risultato — non nel pitch.</p>
+          </div>
+          <div class="split-card">
+            <ul>
+              <li data-i18n="chi.voice.l1">Pratici, non hype</li>
+              <li data-i18n="chi.voice.l2">Caldi, non corporate</li>
+              <li data-i18n="chi.voice.l3">Italiani nel sentire, globali nella forma</li>
+              <li data-i18n="chi.voice.l4">Outcome-first, mai feature-first</li>
+              <li data-i18n="chi.voice.l5">Embedded, mai bolted on</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section-alt reveal">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="eyebrow" data-i18n="chi.team.eyebrow">IL TEAM</p>
+            <h2 data-i18n="chi.team.h">Un team piccolo, vicino ai clienti.</h2>
+          </div>
+          <div>
+            <p data-i18n="chi.team.p">Faperia è fondato e guidato direttamente — nessun livello tra te e chi costruisce. Ogni audit è condotto da una delle persone che firmerà anche l’implementazione, se ci sarà.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+      <div class="container">
+        <div class="cta-card">
+          <h2 data-i18n="chi.cta.h">Iniziamo dall’audit.</h2>
+          <p data-i18n="chi.cta.p">Cinque giorni, prezzo bloccato, e una decisione chiara di cosa fare — con noi o senza.</p>
+          <div class="cta-group" style="justify-content:center;">
+            <a href="contatti.html" class="btn btn-primary btn-arrow" data-i18n="cta.book">Prenota l’audit</a>
+            <a href="offerte.html" class="btn btn-outline" data-i18n="cta.see-offers">Vedi le offerte</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+          <p data-i18n="footer.tagline">Digitale, automazione, AI per le PMI italiane.</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col1">Sito</h4>
+          <ul>
+            <li><a href="cosa-facciamo.html" data-i18n="nav.cosa">Cosa facciamo</a></li>
+            <li><a href="offerte.html" data-i18n="nav.offerte">Offerte</a></li>
+            <li><a href="come-funziona.html" data-i18n="nav.come">Come funziona</a></li>
+            <li><a href="chi-siamo.html" data-i18n="nav.chi">Chi siamo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col2">Contatti</h4>
+          <ul>
+            <li><a href="mailto:hello@faperia.it">hello@faperia.it</a></li>
+            <li><a href="contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><a href="https://www.linkedin.com/company/faperia" data-i18n="footer.linkedin">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col3">Studio</h4>
+          <ul>
+            <li><span data-i18n="footer.studio">Umbria, Italia</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copy">© 2026 Faperia. Tutti i diritti riservati.</span>
+        <span><a href="#" data-i18n="footer.privacy">Privacy</a> · <a href="#" data-i18n="footer.terms">Termini</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

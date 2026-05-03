@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="offerte.title">Offerte — Faperia</title>
+  <meta name="description" data-i18n-attr="content:offerte.meta" content="Tre offerte produttizzate: Audit Express, Quick Win, Operations Upgrade. Prezzi bloccati, tempi chiari." />
+
+  <script>
+    (function(){
+      try {
+        var l = localStorage.getItem('faperia-lang');
+        if (l !== 'en' && l !== 'it') l = 'it';
+        document.documentElement.setAttribute('lang', l);
+      } catch(e) {}
+    })();
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+      <nav class="nav" id="mainNav">
+        <a href="cosa-facciamo.html" class="nav-link" data-i18n="nav.cosa">Cosa facciamo</a>
+        <a href="offerte.html" class="nav-link active" data-i18n="nav.offerte">Offerte</a>
+        <a href="come-funziona.html" class="nav-link" data-i18n="nav.come">Come funziona</a>
+        <a href="chi-siamo.html" class="nav-link" data-i18n="nav.chi">Chi siamo</a>
+        <a href="contatti.html" class="nav-link" data-i18n="nav.contatti">Contatti</a>
+        <div class="lang-toggle">
+          <button data-lang="it" class="active">IT</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-i18n="offerte.hero.h1">Tre offerte. Prezzi bloccati. Tempi chiari.</h1>
+        <p class="lead" data-i18n="offerte.hero.lead">Si parte da un audit a basso prezzo. Da lì, due tracce di implementazione progettate per coprire la maggior parte dei bisogni reali di una PMI italiana.</p>
+      </div>
+    </section>
+
+    <!-- Audit Express detail -->
+    <section id="audit" class="reveal">
+      <div class="container">
+        <div class="detail-block">
+          <div class="meta-col">
+            <p class="eyebrow" data-i18n="offerte.audit.eyebrow">OFFERTA 1</p>
+            <h2 data-i18n="offerte.audit.title">Audit Express</h2>
+            <p class="muted" data-i18n="offerte.audit.tag">PER CHI SENTE LA FATICA, MA NON LA SA NOMINARE</p>
+            <div class="price" data-i18n="home.offer1.price">€250</div>
+            <div class="price-sub" data-i18n="home.offer1.psub">pagamento anticipato • detratto dall’implementazione</div>
+
+            <div class="stat-row">
+              <span class="label" data-i18n="offerte.audit.timeline.l">TEMPI</span>
+              <span class="value" data-i18n="offerte.audit.timeline.v">5 giorni lavorativi</span>
+            </div>
+            <div class="stat-row">
+              <span class="label" data-i18n="offerte.audit.metric.l">METRICA DI SUCCESSO</span>
+              <span class="value" data-i18n="offerte.audit.metric.v">Lista numerata di cosa sistemare e quanto vale</span>
+            </div>
+            <div class="stat-row">
+              <span class="label" data-i18n="offerte.audit.format.l">FORMATO</span>
+              <span class="value" data-i18n="offerte.audit.format.v">Remoto o in presenza in Umbria</span>
+            </div>
+
+            <a href="contatti.html" class="btn btn-primary btn-arrow" style="margin-top:32px;" data-i18n="cta.book">Prenota l’audit</a>
+          </div>
+          <div class="body-col">
+            <h3 data-i18n="offerte.audit.promise.h">La promessa</h3>
+            <p data-i18n="offerte.audit.promise.p">In una settimana mappiamo i tuoi tre colli di bottiglia operativi principali, quantifichiamo le ore e gli euro che ti costano e ti consegniamo un piano d’azione prioritizzato.</p>
+
+            <h3 data-i18n="offerte.audit.del.h">Cosa ricevi</h3>
+            <ul>
+              <li data-i18n="offerte.audit.del.l1">Call di scoperta da <strong>90 minuti</strong> con titolare e 1–2 persone chiave</li>
+              <li data-i18n="offerte.audit.del.l2">Walkthrough dei processi — remoto o in presenza, una sessione</li>
+              <li data-i18n="offerte.audit.del.l3">Report scritto: i 3 colli di bottiglia principali, ore ed euro persi al mese, interventi consigliati, stima ROI per intervento</li>
+              <li data-i18n="offerte.audit.del.l4">Call di restituzione da <strong>30 minuti</strong> per leggere insieme i risultati</li>
+            </ul>
+
+            <h3 data-i18n="offerte.audit.note.h">Il prezzo del primo passo</h3>
+            <p data-i18n="offerte.audit.note.p">I <strong>€250</strong> sono pagati in anticipo — mai gratis. È il modo per filtrare chi è davvero interessato e per pagare il lavoro fatto, anche se poi non si va avanti. Se entro <strong>30 giorni</strong> prenoti una Quick Win o un Operations Upgrade, i <strong>€250</strong> sono interamente detratti dal prezzo dell’implementazione.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Win detail -->
+    <section id="quickwin" class="section-alt reveal">
+      <div class="container">
+        <div class="detail-block">
+          <div class="meta-col">
+            <p class="eyebrow" data-i18n="offerte.qw.eyebrow">OFFERTA 2</p>
+            <h2 data-i18n="offerte.qw.title">Quick Win</h2>
+            <p class="muted" data-i18n="offerte.qw.tag">UNA ROUTINE NOTA, AUTOMATIZZATA END-TO-END</p>
+            <div class="price" data-i18n="home.offer2.price">€890</div>
+            <div class="price-sub" data-i18n="offerte.qw.price.sub">tariffa fondatori • listino successivo €1.500–€2.500</div>
+
+            <div class="stat-row">
+              <span class="label" data-i18n="offerte.audit.timeline.l">TEMPI</span>
+              <span class="value" data-i18n="offerte.qw.timeline.v">2 settimane</span>
+            </div>
+            <div class="stat-row">
+              <span class="label" data-i18n="offerte.qw.scope.l">AMBITO</span>
+              <span class="value" data-i18n="offerte.qw.scope.v">Una routine singola, scelta durante l’audit</span>
+            </div>
+            <div class="stat-row">
+              <span class="label" data-i18n="offerte.audit.metric.l">METRICA DI SUCCESSO</span>
+              <span class="value" data-i18n="offerte.qw.metric.v">Ore risparmiate per settimana, verificate dopo 30 giorni</span>
+            </div>
+
+            <a href="contatti.html" class="btn btn-primary btn-arrow" style="margin-top:32px;" data-i18n="cta.start-audit">Inizia con un audit</a>
+          </div>
+          <div class="body-col">
+            <h3 data-i18n="offerte.qw.promise.h">La promessa</h3>
+            <p data-i18n="offerte.qw.promise.p">In due settimane automatizziamo end-to-end una routine dolorosa. Il tuo team riprende quel tempo, in modo permanente.</p>
+
+            <h3 data-i18n="offerte.qw.del.h">Cosa ricevi</h3>
+            <ul>
+              <li data-i18n="offerte.qw.del.l1">Un flusso automatizzato, oppure un assistente AI focalizzato, oppure una pipeline di elaborazione documenti</li>
+              <li data-i18n="offerte.qw.del.l2">Integrazione con gli strumenti che già usi</li>
+              <li data-i18n="offerte.qw.del.l3">Test e sessione di onboarding per il personale</li>
+              <li data-i18n="offerte.qw.del.l4">Documentazione in italiano</li>
+              <li data-i18n="offerte.qw.del.l5"><strong>30 giorni</strong> di supporto post-lancio</li>
+            </ul>
+
+            <h3 data-i18n="offerte.qw.note.h">Per chi è</h3>
+            <p data-i18n="offerte.qw.note.p">PMI che sanno già quale routine sta bruciando ore: reinserimento dati, risposte ripetitive, gestione fatture, intake lead, documenti dei fornitori, e cose simili.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Operations Upgrade detail -->
+    <section id="operations" class="reveal">
+      <div class="container">
+        <div class="detail-block">
+          <div class="meta-col">
+            <p class="eyebrow" data-i18n="offerte.ou.eyebrow">OFFERTA 3</p>
+            <h2 data-i18n="offerte.ou.title">Operations Upgrade</h2>
+            <p class="muted" data-i18n="offerte.ou.tag">UN’INTERA AREA DI PROCESSO, RIPROGETTATA</p>
+            <div class="price" data-i18n="home.offer3.price">€2.490</div>
+            <div class="price-sub" data-i18n="offerte.ou.price.sub">tariffa fondatori • listino successivo €4.500–€7.500</div>
+
+            <div class="stat-row">
+              <span class="label" data-i18n="offerte.audit.timeline.l">TEMPI</span>
+              <span class="value" data-i18n="offerte.ou.timeline.v">4 settimane</span>
+            </div>
+            <div class="stat-row">
+              <span class="label" data-i18n="offerte.ou.scope.l">AMBITO</span>
+              <span class="value" data-i18n="offerte.ou.scope.v">Un’area di processo intera (es. ordine-fattura)</span>
+            </div>
+            <div class="stat-row">
+              <span class="label" data-i18n="offerte.audit.metric.l">METRICA DI SUCCESSO</span>
+              <span class="value" data-i18n="offerte.ou.metric.v">Ore risparmiate + una metrica secondaria (tempo di risposta, tasso di errore, ricavi)</span>
+            </div>
+
+            <a href="contatti.html" class="btn btn-primary btn-arrow" style="margin-top:32px;" data-i18n="cta.start-audit">Inizia con un audit</a>
+          </div>
+          <div class="body-col">
+            <h3 data-i18n="offerte.ou.promise.h">La promessa</h3>
+            <p data-i18n="offerte.ou.promise.p">In quattro settimane trasformiamo un’intera area di processo end-to-end, combinando automazione e AI dove ognuna si guadagna il posto.</p>
+
+            <h3 data-i18n="offerte.ou.del.h">Cosa ricevi</h3>
+            <ul>
+              <li data-i18n="offerte.ou.del.l1"><strong>2–4 automazioni</strong> connesse e/o un assistente AI allenato sul tuo contesto</li>
+              <li data-i18n="offerte.ou.del.l2">Integrazione tra gestionale, CRM, email e altri strumenti rilevanti</li>
+              <li data-i18n="offerte.ou.del.l3">Sessione di formazione di gruppo per il personale</li>
+              <li data-i18n="offerte.ou.del.l4">Documentazione completa e handover</li>
+              <li data-i18n="offerte.ou.del.l5"><strong>60 giorni</strong> di supporto e ottimizzazione</li>
+            </ul>
+
+            <h3 data-i18n="offerte.ou.note.h">Per chi è</h3>
+            <p data-i18n="offerte.ou.note.p">PMI pronte a riprogettare un’intera area di processo — ad esempio l’intero flusso ordine-fattura, il setup di customer support, o l’intake documenti end-to-end.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founding strip -->
+    <section class="section-tight reveal">
+      <div class="container">
+        <div class="founding-strip">
+          <div>
+            <h3 data-i18n="home.founding.h">Tariffa fondatori, fino ai primi 10 clienti.</h3>
+            <p data-i18n="home.founding.p">Quando il decimo si chiude, i prezzi salgono ai listini pubblici. Il tetto è reale, e contato.</p>
+          </div>
+          <a href="contatti.html" class="btn btn-primary btn-arrow" data-i18n="cta.book">Prenota l’audit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+      <div class="container">
+        <div class="cta-card">
+          <h2 data-i18n="offerte.cta.h">Non sai ancora quale offerta fa per te?</h2>
+          <p data-i18n="offerte.cta.p">Lo decidiamo insieme nell’audit. È esattamente per questo che esiste.</p>
+          <div class="cta-group" style="justify-content:center;">
+            <a href="contatti.html" class="btn btn-primary btn-arrow" data-i18n="cta.book">Prenota l’audit</a>
+            <a href="come-funziona.html" class="btn btn-outline" data-i18n="nav.come">Come funziona</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+          <p data-i18n="footer.tagline">Digitale, automazione, AI per le PMI italiane.</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col1">Sito</h4>
+          <ul>
+            <li><a href="cosa-facciamo.html" data-i18n="nav.cosa">Cosa facciamo</a></li>
+            <li><a href="offerte.html" data-i18n="nav.offerte">Offerte</a></li>
+            <li><a href="come-funziona.html" data-i18n="nav.come">Come funziona</a></li>
+            <li><a href="chi-siamo.html" data-i18n="nav.chi">Chi siamo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col2">Contatti</h4>
+          <ul>
+            <li><a href="mailto:hello@faperia.it">hello@faperia.it</a></li>
+            <li><a href="contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><a href="https://www.linkedin.com/company/faperia" data-i18n="footer.linkedin">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col3">Studio</h4>
+          <ul>
+            <li><span data-i18n="footer.studio">Umbria, Italia</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copy">© 2026 Faperia. Tutti i diritti riservati.</span>
+        <span><a href="#" data-i18n="footer.privacy">Privacy</a> · <a href="#" data-i18n="footer.terms">Termini</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

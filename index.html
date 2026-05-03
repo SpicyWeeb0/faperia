@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="home.title">Faperia — Automazione e AI per le PMI italiane</title>
+  <meta name="description" data-i18n-attr="content:home.meta" content="Trasformiamo il lavoro quotidiano delle piccole e medie imprese italiane con automazione pratica e AI concreta." />
+
+  <!-- Anti-flash language init -->
+  <script>
+    (function(){
+      try {
+        var l = localStorage.getItem('faperia-lang');
+        if (l !== 'en' && l !== 'it') l = 'it';
+        document.documentElement.setAttribute('lang', l);
+      } catch(e) {}
+    })();
+  </script>
+
+  <!-- GTM placeholder -->
+  <!-- <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXX');</script> -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+      <nav class="nav" id="mainNav">
+        <a href="cosa-facciamo.html" class="nav-link" data-i18n="nav.cosa">Cosa facciamo</a>
+        <a href="offerte.html" class="nav-link" data-i18n="nav.offerte">Offerte</a>
+        <a href="come-funziona.html" class="nav-link" data-i18n="nav.come">Come funziona</a>
+        <a href="chi-siamo.html" class="nav-link" data-i18n="nav.chi">Chi siamo</a>
+        <a href="contatti.html" class="nav-link" data-i18n="nav.contatti">Contatti</a>
+        <div class="lang-toggle">
+          <button data-lang="it" class="active">IT</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-content">
+        <p class="hero-tagline" data-i18n="home.hero.eyebrow">AUTOMAZIONE PRATICA • AI CONCRETA</p>
+        <h1 data-i18n="home.hero.h1">Fa <em>per te</em>.</h1>
+        <p class="hero-desc" data-i18n="home.hero.sub">Digitale, automazione, AI per le PMI italiane. Trasformiamo le routine manuali in flussi automatici e restituiamo ore al tuo team — settimana dopo settimana.</p>
+        <div class="cta-group">
+          <a href="contatti.html" class="btn btn-primary btn-arrow" data-i18n="cta.book">Prenota l’audit</a>
+          <a href="cosa-facciamo.html" class="btn btn-outline" data-i18n="cta.discover">Scopri di più</a>
+        </div>
+        <div class="hero-meta">
+          <span data-i18n="home.hero.meta1">Risultati misurabili</span>
+          <span data-i18n="home.hero.meta2">Integrato nei tuoi strumenti</span>
+          <span data-i18n="home.hero.meta3">Audit fisso a <strong>€250</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section class="section-tight reveal">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="home.numbers.eyebrow">IL DIVARIO COSTA</p>
+          <h2 data-i18n="home.numbers.heading">Numeri concreti, non promesse.</h2>
+        </div>
+        <div class="numbers">
+          <div class="number-item">
+            <div class="big" data-i18n="home.numbers.1.big">10–20</div>
+            <div class="label" data-i18n="home.numbers.1.label">ore/settimana restituite per PMI tipica</div>
+          </div>
+          <div class="number-item">
+            <div class="big" data-i18n="home.numbers.2.big">60–80%</div>
+            <div class="label" data-i18n="home.numbers.2.label">di riduzione dei tempi di risposta</div>
+          </div>
+          <div class="number-item">
+            <div class="big" data-i18n="home.numbers.3.big">Giorni→min</div>
+            <div class="label" data-i18n="home.numbers.3.label">gestione dei documenti</div>
+          </div>
+          <div class="number-item">
+            <div class="big" data-i18n="home.numbers.4.big">5 giorni</div>
+            <div class="label" data-i18n="home.numbers.4.label">dall’audit alle prime decisioni</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section class="section-alt reveal">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="home.solutions.eyebrow">COSA FACCIAMO</p>
+          <h2 data-i18n="home.solutions.heading">Tre famiglie di soluzioni, costruite intorno al modo in cui già lavori.</h2>
+          <p data-i18n="home.solutions.lead">Niente sistemi paralleli da ricordare. Le soluzioni vivono dentro i flussi reali della tua azienda — gestionale, CRM, email, e-commerce, cloud.</p>
+        </div>
+        <div class="solutions-grid">
+          <article class="solution-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h6M4 12h10M4 17h6"/><circle cx="18" cy="7" r="2"/><circle cx="18" cy="17" r="2"/><path d="M18 9v6"/></svg>
+            </div>
+            <h3 data-i18n="home.sol1.title">Automazione dei flussi di lavoro</h3>
+            <p data-i18n="home.sol1.body">Colleghiamo gli strumenti che già usi e rimuoviamo i passaggi manuali. Preventivo-ordine, fattura-incasso, lead-CRM: ogni copia-incolla diventa un flusso che gira da solo.</p>
+          </article>
+          <article class="solution-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 1 1-3.4-6.55"/><path d="M21 4v5h-5"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h3 data-i18n="home.sol2.title">Assistenti AI e chatbot</h3>
+            <p data-i18n="home.sol2.body">Assistenti che rispondono in italiano, qualificano i lead, prendono prenotazioni e passano la mano alla persona giusta. Sempre allenati sul tuo contesto, mai generici.</p>
+          </article>
+          <article class="solution-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 14h8M8 18h5"/></svg>
+            </div>
+            <h3 data-i18n="home.sol3.title">Documenti e dati</h3>
+            <p data-i18n="home.sol3.body">Fatture elettroniche, contratti, DDT, email da fornitori: trasformiamo documenti non strutturati in dati puliti, pronti per i tuoi sistemi. OCR, estrazione, validazione, smistamento.</p>
+          </article>
+        </div>
+        <div style="margin-top:48px;">
+          <a href="cosa-facciamo.html" class="btn btn-ghost btn-arrow" data-i18n="cta.discover">Scopri di più</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFERS -->
+    <section class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="home.offers.eyebrow">OFFERTE</p>
+          <h2 data-i18n="home.offers.heading">Tre punti di partenza chiari.</h2>
+          <p data-i18n="home.offers.lead">Si comincia sempre con un audit fisso a basso prezzo. Da lì, due tracce di implementazione a prezzo bloccato.</p>
+        </div>
+
+        <div class="offers-grid">
+          <article class="offer-card">
+            <div class="offer-tag" data-i18n="home.offer1.tag">AUDIT</div>
+            <h3 data-i18n="home.offer1.title">Audit Express</h3>
+            <div class="offer-meta" data-i18n="home.offer1.meta">5 giorni lavorativi</div>
+            <div class="offer-price" data-i18n="home.offer1.price">€250</div>
+            <div class="offer-price-sub" data-i18n="home.offer1.psub">pagamento anticipato • detratto dall’implementazione</div>
+            <div class="offer-divider"></div>
+            <ul class="offer-features">
+              <li class="offer-feature" data-i18n="home.offer1.f1">Call di scoperta da <strong>90 minuti</strong></li>
+              <li class="offer-feature" data-i18n="home.offer1.f2">Mappatura dei <strong>3 colli di bottiglia</strong> principali</li>
+              <li class="offer-feature" data-i18n="home.offer1.f3">Report scritto con ROI per intervento</li>
+            </ul>
+            <a href="offerte.html#audit" class="btn btn-outline btn-arrow" data-i18n="cta.discover">Scopri di più</a>
+          </article>
+
+          <article class="offer-card featured">
+            <div class="offer-tag" data-i18n="home.offer2.tag">IMPLEMENTAZIONE</div>
+            <h3 data-i18n="home.offer2.title">Quick Win</h3>
+            <div class="offer-meta" data-i18n="home.offer2.meta">2 settimane</div>
+            <div class="offer-price" data-i18n="home.offer2.price">€890</div>
+            <div class="offer-price-sub" data-i18n="home.offer2.psub">tariffa fondatori • primi 10 clienti</div>
+            <div class="offer-divider"></div>
+            <ul class="offer-features">
+              <li class="offer-feature" data-i18n="home.offer2.f1">Una routine dolorosa <strong>automatizzata end-to-end</strong></li>
+              <li class="offer-feature" data-i18n="home.offer2.f2">Integrazione con i tuoi strumenti attuali</li>
+              <li class="offer-feature" data-i18n="home.offer2.f3"><strong>30 giorni</strong> di supporto post-lancio</li>
+            </ul>
+            <a href="offerte.html#quickwin" class="btn btn-primary btn-arrow" data-i18n="cta.discover">Scopri di più</a>
+          </article>
+
+          <article class="offer-card">
+            <div class="offer-tag" data-i18n="home.offer3.tag">IMPLEMENTAZIONE</div>
+            <h3 data-i18n="home.offer3.title">Operations Upgrade</h3>
+            <div class="offer-meta" data-i18n="home.offer3.meta">4 settimane</div>
+            <div class="offer-price" data-i18n="home.offer3.price">€2.490</div>
+            <div class="offer-price-sub" data-i18n="home.offer3.psub">tariffa fondatori • primi 10 clienti</div>
+            <div class="offer-divider"></div>
+            <ul class="offer-features">
+              <li class="offer-feature" data-i18n="home.offer3.f1">Un’intera area di processo riprogettata</li>
+              <li class="offer-feature" data-i18n="home.offer3.f2">Automazioni connesse e/o assistente AI dedicato</li>
+              <li class="offer-feature" data-i18n="home.offer3.f3"><strong>60 giorni</strong> di supporto e ottimizzazione</li>
+            </ul>
+            <a href="offerte.html#operations" class="btn btn-outline btn-arrow" data-i18n="cta.discover">Scopri di più</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDING STRIP -->
+    <section class="section-tight reveal">
+      <div class="container">
+        <div class="founding-strip">
+          <div>
+            <h3 data-i18n="home.founding.h">Tariffa fondatori, fino ai primi 10 clienti.</h3>
+            <p data-i18n="home.founding.p">Quando il decimo si chiude, i prezzi salgono ai listini pubblici. Il tetto è reale, e contato.</p>
+          </div>
+          <a href="contatti.html" class="btn btn-primary btn-arrow" data-i18n="cta.start-audit">Inizia con un audit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFFERENTIATORS -->
+    <section class="section-alt reveal">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="home.diff.eyebrow">PERCHÉ FAPERIA</p>
+          <h2 data-i18n="home.diff.heading">Pratici, italiani, concentrati sul risultato.</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature">
+            <h4 data-i18n="home.diff.1.h">Embedded, non bolted on</h4>
+            <p data-i18n="home.diff.1.b">Le soluzioni vivono dentro i flussi reali, non in sistemi paralleli che il tuo team deve ricordarsi di usare.</p>
+          </div>
+          <div class="feature">
+            <h4 data-i18n="home.diff.2.h">Outcome-first</h4>
+            <p data-i18n="home.diff.2.b">Ogni intervento è misurato: ore restituite, errori ridotti, tempo di risposta tagliato, ricavi recuperati.</p>
+          </div>
+          <div class="feature">
+            <h4 data-i18n="home.diff.3.h">Contesto italiano</h4>
+            <p data-i18n="home.diff.3.b">Conosciamo lo stack che usate davvero — fatturazione elettronica, SDI, gestionali, sistemi bancari regionali — e progettiamo intorno.</p>
+          </div>
+          <div class="feature">
+            <h4 data-i18n="home.diff.4.h">AI pragmatica</h4>
+            <p data-i18n="home.diff.4.b">Usiamo AI quando si guadagna il posto. Quando basta un’automazione semplice, spediamo un’automazione semplice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+      <div class="container">
+        <div class="cta-card">
+          <h2 data-i18n="home.cta.h">Inizia da un audit fisso a <strong>€250</strong>.</h2>
+          <p data-i18n="home.cta.p">In cinque giorni mappiamo i tre colli di bottiglia che ti costano di più e ti diciamo cosa vale la pena di sistemare — con i numeri.</p>
+          <div class="cta-group" style="justify-content:center;">
+            <a href="contatti.html" class="btn btn-primary btn-arrow" data-i18n="cta.book">Prenota l’audit</a>
+            <a href="come-funziona.html" class="btn btn-outline" data-i18n="nav.come">Come funziona</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+          <p data-i18n="footer.tagline">Digitale, automazione, AI per le PMI italiane.</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col1">Sito</h4>
+          <ul>
+            <li><a href="cosa-facciamo.html" data-i18n="nav.cosa">Cosa facciamo</a></li>
+            <li><a href="offerte.html" data-i18n="nav.offerte">Offerte</a></li>
+            <li><a href="come-funziona.html" data-i18n="nav.come">Come funziona</a></li>
+            <li><a href="chi-siamo.html" data-i18n="nav.chi">Chi siamo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col2">Contatti</h4>
+          <ul>
+            <li><a href="mailto:hello@faperia.it">hello@faperia.it</a></li>
+            <li><a href="contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><a href="https://www.linkedin.com/company/faperia" data-i18n="footer.linkedin">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col3">Studio</h4>
+          <ul>
+            <li><span data-i18n="footer.studio">Umbria, Italia</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copy">© 2026 Faperia. Tutti i diritti riservati.</span>
+        <span><a href="#" data-i18n="footer.privacy">Privacy</a> · <a href="#" data-i18n="footer.terms">Termini</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

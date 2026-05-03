@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="cosa.title">Cosa facciamo — Faperia</title>
+  <meta name="description" data-i18n-attr="content:cosa.meta" content="Tre famiglie di soluzioni: automazione dei flussi, assistenti AI, elaborazione documenti e dati." />
+
+  <script>
+    (function(){
+      try {
+        var l = localStorage.getItem('faperia-lang');
+        if (l !== 'en' && l !== 'it') l = 'it';
+        document.documentElement.setAttribute('lang', l);
+      } catch(e) {}
+    })();
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+      <nav class="nav" id="mainNav">
+        <a href="cosa-facciamo.html" class="nav-link active" data-i18n="nav.cosa">Cosa facciamo</a>
+        <a href="offerte.html" class="nav-link" data-i18n="nav.offerte">Offerte</a>
+        <a href="come-funziona.html" class="nav-link" data-i18n="nav.come">Come funziona</a>
+        <a href="chi-siamo.html" class="nav-link" data-i18n="nav.chi">Chi siamo</a>
+        <a href="contatti.html" class="nav-link" data-i18n="nav.contatti">Contatti</a>
+        <div class="lang-toggle">
+          <button data-lang="it" class="active">IT</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-i18n="cosa.hero.h1">Tre cose che facciamo bene.</h1>
+        <p class="lead" data-i18n="cosa.hero.lead">Strettamente connesse, ognuna progettata per inserirsi nei flussi e negli strumenti che la tua azienda già usa. Niente sostituzioni di sistemi. Niente progetti monstre.</p>
+      </div>
+    </section>
+
+    <!-- 01 Workflow Automation -->
+    <section class="reveal">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="eyebrow" data-i18n="cosa.wa.eyebrow">01 — AUTOMAZIONE DEI FLUSSI</p>
+            <h2 data-i18n="cosa.wa.h">Le code di copia-incolla, eliminate.</h2>
+            <p data-i18n="cosa.wa.p1">Colleghiamo i sistemi su cui le PMI italiane si affidano già — gestionali, CRM, email, fogli di calcolo, e-commerce, cloud storage — e rimuoviamo i passaggi manuali tra l’uno e l’altro.</p>
+            <p data-i18n="cosa.wa.p2">Preventivo-ordine, fattura-incasso, lead-CRM, ordine-consegna: ogni passaggio che oggi richiede di spostare manualmente i dati diventa un flusso che parte da solo.</p>
+          </div>
+          <div class="split-card">
+            <h3 data-i18n="cosa.wa.list.h">Esempi reali</h3>
+            <ul>
+              <li data-i18n="cosa.wa.l1">Sincronizzazione automatica tra il gestionale e il CRM — stessi clienti, stesse anagrafiche, niente doppioni</li>
+              <li data-i18n="cosa.wa.l2">Lead da modulo web a CRM con assegnazione e notifica al commerciale giusto</li>
+              <li data-i18n="cosa.wa.l3">Ordini e-commerce che generano automaticamente DDT e fattura nel gestionale</li>
+              <li data-i18n="cosa.wa.l4">Promemoria di pagamento inviati automaticamente a partire dallo scadenziario</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 AI Assistants -->
+    <section class="section-alt reveal">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="eyebrow" data-i18n="cosa.ai.eyebrow">02 — ASSISTENTI AI</p>
+            <h2 data-i18n="cosa.ai.h">Assistenti che parlano la lingua del tuo business.</h2>
+            <p data-i18n="cosa.ai.p1">Assistenti rivolti al cliente che rispondono in italiano, qualificano i lead, prendono prenotazioni e passano la mano a una persona quando serve davvero.</p>
+            <p data-i18n="cosa.ai.p2">Assistenti interni che permettono allo staff di interrogare la conoscenza aziendale, redigere documenti e trovare l’informazione giusta senza scavare in cartelle infinite. Sempre allenati sul contesto del cliente, mai generici.</p>
+          </div>
+          <div class="split-card">
+            <h3 data-i18n="cosa.ai.list.h">Esempi reali</h3>
+            <ul>
+              <li data-i18n="cosa.ai.l1">Chatbot che risponde alle domande più frequenti dei clienti e qualifica i lead 24/7</li>
+              <li data-i18n="cosa.ai.l2">Assistente interno collegato a Drive/Notion che trova procedure, prezzi e specifiche tecniche</li>
+              <li data-i18n="cosa.ai.l3">Bozze automatiche di risposta alle email più ricorrenti, pronte da revisionare e inviare</li>
+              <li data-i18n="cosa.ai.l4">Assistente di prenotazione integrato con il calendario aziendale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Documents -->
+    <section class="reveal">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="eyebrow" data-i18n="cosa.doc.eyebrow">03 — DOCUMENTI E DATI</p>
+            <h2 data-i18n="cosa.doc.h">Da carta e PDF a dati puliti.</h2>
+            <p data-i18n="cosa.doc.p1">Fatture, contratti, DDT, fatture elettroniche, moduli scansionati, email da fornitori: trasformiamo documenti non strutturati in dati puliti e validati, pronti per i tuoi sistemi.</p>
+            <p data-i18n="cosa.doc.p2">OCR, estrazione intelligente, validazione, smistamento: la carta continua a muoversi mentre il team si concentra sul lavoro che conta.</p>
+          </div>
+          <div class="split-card">
+            <h3 data-i18n="cosa.doc.list.h">Esempi reali</h3>
+            <ul>
+              <li data-i18n="cosa.doc.l1">Estrazione automatica dei dati dai DDT in arrivo e inserimento nel gestionale</li>
+              <li data-i18n="cosa.doc.l2">Validazione delle fatture passive contro l’ordine d’acquisto, con flag delle anomalie</li>
+              <li data-i18n="cosa.doc.l3">Smistamento automatico delle email con allegati nei sistemi giusti</li>
+              <li data-i18n="cosa.doc.l4">Lettura e archiviazione strutturata dei contratti firmati</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+      <div class="container">
+        <div class="cta-card">
+          <h2 data-i18n="cosa.cta.h">Quale di queste tre ti pesa di più?</h2>
+          <p data-i18n="cosa.cta.p">L’audit Express parte proprio da qui: capire dove il tempo e i soldi se ne vanno davvero.</p>
+          <div class="cta-group" style="justify-content:center;">
+            <a href="contatti.html" class="btn btn-primary btn-arrow" data-i18n="cta.book">Prenota l’audit</a>
+            <a href="offerte.html" class="btn btn-outline" data-i18n="cta.see-offers">Vedi le offerte</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+          <p data-i18n="footer.tagline">Digitale, automazione, AI per le PMI italiane.</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col1">Sito</h4>
+          <ul>
+            <li><a href="cosa-facciamo.html" data-i18n="nav.cosa">Cosa facciamo</a></li>
+            <li><a href="offerte.html" data-i18n="nav.offerte">Offerte</a></li>
+            <li><a href="come-funziona.html" data-i18n="nav.come">Come funziona</a></li>
+            <li><a href="chi-siamo.html" data-i18n="nav.chi">Chi siamo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col2">Contatti</h4>
+          <ul>
+            <li><a href="mailto:hello@faperia.it">hello@faperia.it</a></li>
+            <li><a href="contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><a href="https://www.linkedin.com/company/faperia" data-i18n="footer.linkedin">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col3">Studio</h4>
+          <ul>
+            <li><span data-i18n="footer.studio">Umbria, Italia</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copy">© 2026 Faperia. Tutti i diritti riservati.</span>
+        <span><a href="#" data-i18n="footer.privacy">Privacy</a> · <a href="#" data-i18n="footer.terms">Termini</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
