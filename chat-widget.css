@@ -1,0 +1,415 @@
+/* =========================================================
+   Faperia — chat-widget.css
+   AI chat widget. All classes scoped under .fp-chat-*.
+   Consumes the existing :root variables from styles.css.
+   ========================================================= */
+
+.fp-chat,
+.fp-chat *,
+.fp-chat *::before,
+.fp-chat *::after { box-sizing: border-box; }
+
+.fp-chat {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Floating action button ---------- */
+.fp-chat-fab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 14px 32px -10px rgba(160, 78, 45, 0.45),
+              0 4px 10px -2px rgba(30, 37, 48, 0.12);
+  z-index: 8500;
+  transition: transform var(--t-fast), background var(--t-base), box-shadow var(--t-base);
+}
+.fp-chat-fab:hover {
+  background: var(--accent-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px -10px rgba(160, 78, 45, 0.55),
+              0 6px 14px -2px rgba(30, 37, 48, 0.15);
+}
+.fp-chat-fab:focus-visible {
+  outline: 2px solid var(--bg);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgba(200, 100, 60, 0.45);
+}
+.fp-chat-fab svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: none;
+}
+
+.fp-chat[data-state="open"] .fp-chat-fab {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.85);
+}
+
+/* ---------- Panel ---------- */
+.fp-chat-panel {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 384px;
+  height: min(640px, calc(100vh - 44px));
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 36px 80px -28px rgba(30, 37, 48, 0.35),
+              0 12px 24px -6px rgba(30, 37, 48, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 8600;
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  pointer-events: none;
+  transition: opacity 240ms cubic-bezier(.2,.7,.2,1),
+              transform 240ms cubic-bezier(.2,.7,.2,1);
+}
+.fp-chat[data-state="open"] .fp-chat-panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* ---------- Header ---------- */
+.fp-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 18px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  flex-shrink: 0;
+}
+.fp-chat-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.86rem;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+.fp-chat-title-block { flex: 1; min-width: 0; }
+.fp-chat-title {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.fp-chat-subtitle {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.fp-chat-subtitle::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #6FB57A;
+  box-shadow: 0 0 0 3px rgba(111, 181, 122, 0.18);
+}
+.fp-chat-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: transparent;
+  border: 0;
+  color: var(--ink-soft);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--t-fast), color var(--t-fast);
+  flex-shrink: 0;
+}
+.fp-chat-close:hover {
+  background: var(--bg-alt);
+  color: var(--ink);
+}
+
+/* ---------- Disclaimer banner ---------- */
+.fp-chat-disclaimer-banner {
+  padding: 12px 18px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.fp-chat-disclaimer-banner[hidden] { display: none; }
+.fp-chat-disclaimer-text { flex: 1; }
+.fp-chat-disclaimer-dismiss {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: color var(--t-fast);
+  flex-shrink: 0;
+}
+.fp-chat-disclaimer-dismiss:hover { color: var(--ink); }
+
+/* ---------- Messages ---------- */
+.fp-chat-msgs {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 18px 8px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+.fp-chat-msgs::-webkit-scrollbar { width: 8px; }
+.fp-chat-msgs::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+.fp-chat-msgs::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+.fp-chat-msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 86%;
+}
+.fp-chat-msg[data-role="user"] {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+.fp-chat-msg[data-role="assistant"] {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+.fp-chat-bubble {
+  padding: 11px 15px;
+  border-radius: 18px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+.fp-chat-msg[data-role="user"] .fp-chat-bubble {
+  background: var(--ink);
+  color: var(--bg);
+  border-bottom-right-radius: 6px;
+}
+.fp-chat-msg[data-role="assistant"] .fp-chat-bubble {
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-bottom-left-radius: 6px;
+}
+.fp-chat-msg[data-role="assistant"] .fp-chat-bubble strong { color: var(--ink); font-weight: 600; }
+.fp-chat-msg[data-role="assistant"] .fp-chat-bubble a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 100, 60, 0.35);
+  text-underline-offset: 2px;
+}
+.fp-chat-msg[data-role="assistant"] .fp-chat-bubble a:hover {
+  text-decoration-color: var(--accent);
+}
+
+.fp-chat-msg-error .fp-chat-bubble {
+  background: rgba(200, 100, 60, 0.08);
+  border-color: rgba(200, 100, 60, 0.3);
+  color: var(--accent-deep);
+}
+
+/* Typing indicator */
+.fp-chat-typing {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  padding: 4px 0;
+}
+.fp-chat-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--muted);
+  animation: fp-chat-blink 1.2s infinite ease-in-out;
+}
+.fp-chat-typing span:nth-child(2) { animation-delay: 0.18s; }
+.fp-chat-typing span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes fp-chat-blink {
+  0%, 60%, 100% { opacity: 0.25; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-2px); }
+}
+
+/* ---------- Suggestion chips (initial greeting) ---------- */
+.fp-chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.fp-chat-chip {
+  font-family: inherit;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 13px;
+  cursor: pointer;
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
+}
+.fp-chat-chip:hover {
+  background: var(--bg-alt);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+/* ---------- Input ---------- */
+.fp-chat-input {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  padding: 12px 14px 14px;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  flex-shrink: 0;
+}
+.fp-chat-input textarea {
+  flex: 1;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 10px 14px;
+  resize: none;
+  max-height: 140px;
+  min-height: 40px;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.fp-chat-input textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 100, 60, 0.12);
+}
+.fp-chat-input textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.fp-chat-send {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--t-fast), transform var(--t-fast), opacity var(--t-fast);
+}
+.fp-chat-send:hover:not(:disabled) {
+  background: var(--accent-deep);
+  transform: translateY(-1px);
+}
+.fp-chat-send:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.fp-chat-send svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* ---------- Footer note ---------- */
+.fp-chat-footer-note {
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-align: center;
+  padding: 0 18px 10px;
+  margin: 0;
+  letter-spacing: 0.01em;
+  flex-shrink: 0;
+}
+
+/* ---------- Mobile fullscreen (<768px) ---------- */
+@media (max-width: 768px) {
+  .fp-chat-fab {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+  }
+  .fp-chat-panel {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    border: 0;
+  }
+  .fp-chat-header { padding: 16px 16px 14px; }
+  .fp-chat-msgs { padding: 16px 16px 6px; }
+  .fp-chat-input { padding: 10px 12px 14px; padding-bottom: max(14px, env(safe-area-inset-bottom)); }
+  .fp-chat-disclaimer-banner { padding: 11px 16px; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .fp-chat-panel {
+    transition: opacity 100ms linear;
+    transform: none;
+  }
+  .fp-chat[data-state="open"] .fp-chat-panel { transform: none; }
+  .fp-chat-fab:hover { transform: none; }
+  .fp-chat-send:hover:not(:disabled) { transform: none; }
+  .fp-chat-typing span { animation: none; opacity: 0.6; }
+  .fp-chat-msgs { scroll-behavior: auto; }
+}
