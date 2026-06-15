@@ -346,7 +346,66 @@
     'cont.info.partners.h': { it: 'Commercialisti e partner', en: 'Accountants and partners' },
     'cont.info.partners.p': { it: 'Lavoriamo volentieri con commercialisti e consulenti che vogliono offrire automazione ai loro clienti.', en: 'We\u2019re glad to work with accountants and consultants who want to offer automation to their clients.' },
     'cont.info.social.h':   { it: 'Social', en: 'Social' },
-    'cont.form.intent.placeholder': { it: 'Seleziona\u2026', en: 'Select\u2026' }
+    'cont.form.intent.placeholder': { it: 'Seleziona\u2026', en: 'Select\u2026' },
+
+    /* ===================== QUESTIONNAIRE (home) ===================== */
+    'quiz.eyebrow':     { it: 'QUESTIONARIO', en: 'QUESTIONNAIRE' },
+    'quiz.heading':     { it: 'Raccontaci la tua operativit\u00e0 in due minuti.', en: 'Tell us about your operations in two minutes.' },
+    'quiz.lead':        { it: 'Quattro passaggi rapidi. Ti rispondiamo entro 24 ore con i prossimi passi, senza impegno.', en: 'Four quick steps. We reply within 24 hours with next steps, no obligation.' },
+
+    'quiz.s1.tab':      { it: 'Contatti', en: 'Contact' },
+    'quiz.s2.tab':      { it: 'Azienda', en: 'Company' },
+    'quiz.s3.tab':      { it: 'Interesse', en: 'Interest' },
+    'quiz.s4.tab':      { it: 'Messaggio', en: 'Message' },
+
+    'quiz.s1.title':    { it: 'I tuoi contatti', en: 'Your contacts' },
+    'quiz.s2.title':    { it: 'La tua azienda', en: 'Your company' },
+    'quiz.s3.title':    { it: 'Interesse e colli di bottiglia', en: 'Interest and bottlenecks' },
+    'quiz.s4.title':    { it: 'Un ultimo messaggio', en: 'One last message' },
+
+    'quiz.f.name':      { it: 'Nome e cognome *', en: 'Full name *' },
+    'quiz.f.email':     { it: 'Email *', en: 'Email *' },
+    'quiz.f.company':   { it: 'Azienda *', en: 'Company *' },
+    'quiz.f.phone':     { it: 'Telefono (opzionale)', en: 'Phone (optional)' },
+
+    'quiz.f.sector':    { it: 'Settore *', en: 'Sector *' },
+    'quiz.f.size':      { it: 'Dimensione *', en: 'Size *' },
+    'quiz.opt.placeholder': { it: 'Seleziona\u2026', en: 'Select\u2026' },
+    'quiz.sector.manifattura': { it: 'Manifattura', en: 'Manufacturing' },
+    'quiz.sector.commercio':   { it: 'Commercio / Retail', en: 'Retail / Commerce' },
+    'quiz.sector.servizi':     { it: 'Servizi', en: 'Services' },
+    'quiz.sector.ecommerce':   { it: 'E-commerce', en: 'E-commerce' },
+    'quiz.sector.edilizia':    { it: 'Edilizia / Impianti', en: 'Construction / Installations' },
+    'quiz.sector.food':        { it: 'Food &amp; Beverage', en: 'Food &amp; Beverage' },
+    'quiz.sector.altro':       { it: 'Altro', en: 'Other' },
+    'quiz.size.s1':     { it: '1\u20135 dipendenti', en: '1\u20135 employees' },
+    'quiz.size.s2':     { it: '6\u201320 dipendenti', en: '6\u201320 employees' },
+    'quiz.size.s3':     { it: '21\u201350 dipendenti', en: '21\u201350 employees' },
+    'quiz.size.s4':     { it: '50+ dipendenti', en: '50+ employees' },
+
+    'quiz.f.interest':  { it: 'A cosa sei interessato? *', en: 'What are you interested in? *' },
+    'quiz.int.audit':   { it: 'Audit Express \u2014 <strong>\u20ac250</strong>', en: 'Audit Express \u2014 <strong>\u20ac250</strong>' },
+    'quiz.int.quickwin':{ it: 'Quick Win', en: 'Quick Win' },
+    'quiz.int.ops':     { it: 'Operations Upgrade', en: 'Operations Upgrade' },
+    'quiz.int.unsure':  { it: 'Non so ancora', en: 'Not sure yet' },
+
+    'quiz.f.tools':     { it: 'Strumenti che usi oggi', en: 'Tools you use today' },
+    'quiz.tool.gestionale': { it: 'Gestionale', en: 'ERP / management system' },
+    'quiz.tool.crm':    { it: 'CRM', en: 'CRM' },
+    'quiz.tool.email':  { it: 'Email', en: 'Email' },
+    'quiz.tool.ecommerce': { it: 'E-commerce', en: 'E-commerce' },
+    'quiz.tool.excel':  { it: 'Excel / fogli', en: 'Excel / spreadsheets' },
+    'quiz.tool.altro':  { it: 'Altro', en: 'Other' },
+
+    'quiz.f.bottleneck':   { it: 'Qual \u00e8 il collo di bottiglia principale?', en: 'What is your main bottleneck?' },
+    'quiz.f.bottleneck.p': { it: 'Dove si perde pi\u00f9 tempo oggi?', en: 'Where is the most time lost today?' },
+    'quiz.f.message':      { it: 'Raccontaci in due righe', en: 'Tell us in a couple of lines' },
+    'quiz.f.message.p':    { it: 'Cosa fa la tua azienda e cosa vorresti migliorare?', en: 'What does your company do and what would you improve?' },
+    'quiz.f.consent':      { it: 'Acconsento al trattamento dei miei dati per essere ricontattato, secondo la privacy policy. *', en: 'I consent to the processing of my data to be contacted, per the privacy policy. *' },
+
+    'quiz.prev':        { it: 'Indietro', en: 'Back' },
+    'quiz.next':        { it: 'Avanti', en: 'Next' },
+    'quiz.submit':      { it: 'Invia richiesta', en: 'Send request' }
   };
 
   /* ---------------- Apply translations ---------------- */
@@ -512,6 +571,134 @@
             : 'Apertura del client email\u2026 se non succede nulla, scrivici a hello@faperia.it';
         }
       });
+    }
+
+    /* Lead questionnaire (multi-step) -> Worker POST, mailto fallback */
+    const leadForm = document.getElementById('leadForm');
+    if (leadForm) {
+      const LEAD_API = 'https://faperia-chat.nikita-zakaidze.workers.dev/lead';
+      const steps = Array.prototype.slice.call(leadForm.querySelectorAll('.quiz-step'));
+      const dots = Array.prototype.slice.call(document.querySelectorAll('.quiz-dot'));
+      const card = leadForm.closest('.quiz-card');
+      const prevBtn = document.getElementById('quizPrev');
+      const nextBtn = document.getElementById('quizNext');
+      const submitBtn = document.getElementById('quizSubmit');
+      const curEl = document.getElementById('quizCurrent');
+      const statusEl = document.getElementById('leadStatus');
+      const total = steps.length;
+      let idx = 0;
+
+      const msg = (it, en) => (currentLang() === 'en' ? en : it);
+      const fieldsOf = (step) => step.querySelectorAll('input, select, textarea');
+      const stepValid = (n) =>
+        Array.prototype.every.call(fieldsOf(steps[n]), (f) => f.checkValidity());
+      const reportStep = (n) => {
+        const invalid = Array.prototype.find.call(fieldsOf(steps[n]), (f) => !f.checkValidity());
+        if (invalid) { invalid.reportValidity(); return false; }
+        return true;
+      };
+
+      function showStep(n) {
+        idx = Math.max(0, Math.min(n, total - 1));
+        steps.forEach((s, i) => {
+          const on = i === idx;
+          s.classList.toggle('is-active', on);
+          if (on) s.removeAttribute('hidden'); else s.setAttribute('hidden', '');
+        });
+        dots.forEach((d, i) => {
+          d.classList.toggle('is-active', i === idx);
+          d.classList.toggle('is-done', i < idx);
+        });
+        if (curEl) curEl.textContent = String(idx + 1);
+        const last = idx === total - 1;
+        if (prevBtn) prevBtn.hidden = idx === 0;
+        if (nextBtn) nextBtn.hidden = last;
+        if (submitBtn) submitBtn.hidden = !last;
+        if (statusEl) statusEl.textContent = '';
+      }
+
+      if (nextBtn) nextBtn.addEventListener('click', () => {
+        if (reportStep(idx)) showStep(idx + 1);
+      });
+      if (prevBtn) prevBtn.addEventListener('click', () => showStep(idx - 1));
+
+      leadForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        for (let i = 0; i < total; i++) {
+          if (!stepValid(i)) { showStep(i); reportStep(i); return; }
+        }
+
+        const data = new FormData(leadForm);
+        const lang2 = currentLang();
+        const payload = {
+          lang: lang2,
+          name: (data.get('name') || '').toString().trim(),
+          email: (data.get('email') || '').toString().trim(),
+          company: (data.get('company') || '').toString().trim(),
+          phone: (data.get('phone') || '').toString().trim(),
+          sector: (data.get('sector') || '').toString(),
+          size: (data.get('size') || '').toString(),
+          interest: (data.get('interest') || '').toString(),
+          tools: data.getAll('tools').map(String),
+          bottleneck: (data.get('bottleneck') || '').toString().trim(),
+          message: (data.get('message') || '').toString().trim(),
+          consent: !!data.get('consent'),
+          page: location.pathname,
+          url: location.href
+        };
+
+        if (statusEl) statusEl.textContent = msg('Invio in corso\u2026', 'Sending\u2026');
+        if (submitBtn) submitBtn.disabled = true;
+
+        const finishOk = () => {
+          if (card) card.classList.add('is-done');
+          if (submitBtn) { submitBtn.hidden = true; submitBtn.disabled = false; }
+          if (nextBtn) nextBtn.hidden = true;
+          if (prevBtn) prevBtn.hidden = true;
+          if (statusEl) statusEl.textContent = msg(
+            'Grazie. Abbiamo ricevuto la tua richiesta e ti rispondiamo entro 24 ore.',
+            'Thank you. We received your request and will reply within 24 hours.'
+          );
+        };
+
+        const fallbackMailto = () => {
+          const subject = '[Faperia] ' + msg('Questionario', 'Questionnaire')
+            + ' \u2014 ' + (payload.company || payload.name);
+          const lines = [
+            msg('Nome', 'Name') + ': ' + payload.name,
+            'Email: ' + payload.email,
+            msg('Azienda', 'Company') + ': ' + payload.company,
+            msg('Telefono', 'Phone') + ': ' + payload.phone,
+            msg('Settore', 'Sector') + ': ' + payload.sector,
+            msg('Dimensione', 'Size') + ': ' + payload.size,
+            msg('Interesse', 'Interest') + ': ' + payload.interest,
+            msg('Strumenti', 'Tools') + ': ' + payload.tools.join(', '),
+            msg('Collo di bottiglia', 'Bottleneck') + ': ' + payload.bottleneck,
+            '',
+            msg('Messaggio', 'Message') + ':',
+            payload.message
+          ];
+          window.location.href = 'mailto:hello@faperia.it'
+            + '?subject=' + encodeURIComponent(subject)
+            + '&body=' + encodeURIComponent(lines.join('\n'));
+          if (statusEl) statusEl.textContent = msg(
+            'Apertura del client email\u2026 se non succede nulla, scrivici a hello@faperia.it',
+            'Opening your email client\u2026 if nothing happens, write to hello@faperia.it'
+          );
+          if (submitBtn) submitBtn.disabled = false;
+        };
+
+        fetch(LEAD_API, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+          .then((resp) => resp.json().then((j) => ({ ok: resp.ok && j && j.ok })).catch(() => ({ ok: false })))
+          .then((res) => { if (res.ok) finishOk(); else fallbackMailto(); })
+          .catch(() => fallbackMailto());
+      });
+
+      showStep(0);
     }
   });
 })();

@@ -20,7 +20,7 @@
   <!-- GTM placeholder -->
   <!-- <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXX');</script> -->
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="chat-widget.css" />
 
@@ -67,6 +67,28 @@
           <span data-i18n="home.hero.meta2">Integrato nei tuoi strumenti</span>
           <span data-i18n="home.hero.meta3">Audit fisso a <strong>€250</strong></span>
         </div>
+
+        <!-- Flow-node motif: manual step → automated flow -->
+        <svg class="hero-flow" viewBox="0 0 560 64" role="img" aria-label="Manuale → Automatizzato">
+          <line class="flow-track" x1="40" y1="32" x2="520" y2="32" />
+          <circle class="flow-pulse" cx="40" cy="32" r="5" />
+          <g>
+            <circle class="flow-node" cx="40"  cy="32" r="13" />
+            <circle class="flow-core" cx="40"  cy="32" r="4.5" />
+          </g>
+          <g>
+            <circle class="flow-node" cx="200" cy="32" r="13" />
+            <circle class="flow-core" cx="200" cy="32" r="4.5" />
+          </g>
+          <g>
+            <circle class="flow-node" cx="360" cy="32" r="13" />
+            <circle class="flow-core" cx="360" cy="32" r="4.5" />
+          </g>
+          <g>
+            <circle class="flow-node" cx="520" cy="32" r="13" />
+            <circle class="flow-core" cx="520" cy="32" r="4.5" />
+          </g>
+        </svg>
       </div>
     </section>
 
@@ -244,6 +266,135 @@
             <a href="contatti.html" class="btn btn-primary btn-arrow" data-i18n="cta.book">Prenota l’audit</a>
             <a href="come-funziona.html" class="btn btn-outline" data-i18n="nav.come">Come funziona</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUESTIONNAIRE -->
+    <section id="questionario" class="questionnaire reveal">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow" data-i18n="quiz.eyebrow">QUESTIONARIO</p>
+          <h2 data-i18n="quiz.heading">Raccontaci la tua operatività in due minuti.</h2>
+          <p data-i18n="quiz.lead">Quattro passaggi rapidi. Ti rispondiamo entro 24 ore con i prossimi passi, senza impegno.</p>
+        </div>
+
+        <div class="quiz-card">
+          <ol class="quiz-progress" aria-hidden="true">
+            <li class="quiz-dot is-active" data-step="1"><span class="quiz-dot-num">01</span><em data-i18n="quiz.s1.tab">Contatti</em></li>
+            <li class="quiz-dot" data-step="2"><span class="quiz-dot-num">02</span><em data-i18n="quiz.s2.tab">Azienda</em></li>
+            <li class="quiz-dot" data-step="3"><span class="quiz-dot-num">03</span><em data-i18n="quiz.s3.tab">Interesse</em></li>
+            <li class="quiz-dot" data-step="4"><span class="quiz-dot-num">04</span><em data-i18n="quiz.s4.tab">Messaggio</em></li>
+          </ol>
+
+          <form id="leadForm" class="form quiz-form" novalidate>
+            <!-- STEP 1 — contacts -->
+            <fieldset class="quiz-step is-active" data-step="1">
+              <h3 data-i18n="quiz.s1.title">I tuoi contatti</h3>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="q-name" data-i18n="quiz.f.name">Nome e cognome *</label>
+                  <input type="text" id="q-name" name="name" autocomplete="name" required />
+                </div>
+                <div class="form-field">
+                  <label for="q-email" data-i18n="quiz.f.email">Email *</label>
+                  <input type="email" id="q-email" name="email" autocomplete="email" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="q-company" data-i18n="quiz.f.company">Azienda *</label>
+                  <input type="text" id="q-company" name="company" autocomplete="organization" required />
+                </div>
+                <div class="form-field">
+                  <label for="q-phone" data-i18n="quiz.f.phone">Telefono (opzionale)</label>
+                  <input type="tel" id="q-phone" name="phone" autocomplete="tel" />
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- STEP 2 — business -->
+            <fieldset class="quiz-step" data-step="2" hidden>
+              <h3 data-i18n="quiz.s2.title">La tua azienda</h3>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="q-sector" data-i18n="quiz.f.sector">Settore *</label>
+                  <select id="q-sector" name="sector" required>
+                    <option value="" disabled selected data-i18n="quiz.opt.placeholder">Seleziona…</option>
+                    <option data-i18n="quiz.sector.manifattura">Manifattura</option>
+                    <option data-i18n="quiz.sector.commercio">Commercio / Retail</option>
+                    <option data-i18n="quiz.sector.servizi">Servizi</option>
+                    <option data-i18n="quiz.sector.ecommerce">E-commerce</option>
+                    <option data-i18n="quiz.sector.edilizia">Edilizia / Impianti</option>
+                    <option data-i18n="quiz.sector.food">Food &amp; Beverage</option>
+                    <option data-i18n="quiz.sector.altro">Altro</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="q-size" data-i18n="quiz.f.size">Dimensione *</label>
+                  <select id="q-size" name="size" required>
+                    <option value="" disabled selected data-i18n="quiz.opt.placeholder">Seleziona…</option>
+                    <option data-i18n="quiz.size.s1">1–5 dipendenti</option>
+                    <option data-i18n="quiz.size.s2">6–20 dipendenti</option>
+                    <option data-i18n="quiz.size.s3">21–50 dipendenti</option>
+                    <option data-i18n="quiz.size.s4">50+ dipendenti</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- STEP 3 — interest & bottleneck -->
+            <fieldset class="quiz-step" data-step="3" hidden>
+              <h3 data-i18n="quiz.s3.title">Interesse e colli di bottiglia</h3>
+              <div class="form-field">
+                <span class="quiz-grp-label" data-i18n="quiz.f.interest">A cosa sei interessato? *</span>
+                <div class="quiz-radios">
+                  <label class="quiz-opt"><input type="radio" name="interest" value="Audit Express €250" required /><span data-i18n="quiz.int.audit">Audit Express — <strong>€250</strong></span></label>
+                  <label class="quiz-opt"><input type="radio" name="interest" value="Quick Win" /><span data-i18n="quiz.int.quickwin">Quick Win</span></label>
+                  <label class="quiz-opt"><input type="radio" name="interest" value="Operations Upgrade" /><span data-i18n="quiz.int.ops">Operations Upgrade</span></label>
+                  <label class="quiz-opt"><input type="radio" name="interest" value="Non so ancora" /><span data-i18n="quiz.int.unsure">Non so ancora</span></label>
+                </div>
+              </div>
+              <div class="form-field">
+                <span class="quiz-grp-label" data-i18n="quiz.f.tools">Strumenti che usi oggi</span>
+                <div class="quiz-checks">
+                  <label class="quiz-opt"><input type="checkbox" name="tools" value="Gestionale" /><span data-i18n="quiz.tool.gestionale">Gestionale</span></label>
+                  <label class="quiz-opt"><input type="checkbox" name="tools" value="CRM" /><span data-i18n="quiz.tool.crm">CRM</span></label>
+                  <label class="quiz-opt"><input type="checkbox" name="tools" value="Email" /><span data-i18n="quiz.tool.email">Email</span></label>
+                  <label class="quiz-opt"><input type="checkbox" name="tools" value="E-commerce" /><span data-i18n="quiz.tool.ecommerce">E-commerce</span></label>
+                  <label class="quiz-opt"><input type="checkbox" name="tools" value="Excel/fogli" /><span data-i18n="quiz.tool.excel">Excel / fogli</span></label>
+                  <label class="quiz-opt"><input type="checkbox" name="tools" value="Altro" /><span data-i18n="quiz.tool.altro">Altro</span></label>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="q-bottleneck" data-i18n="quiz.f.bottleneck">Qual è il collo di bottiglia principale?</label>
+                <textarea id="q-bottleneck" name="bottleneck" data-i18n-attr="placeholder:quiz.f.bottleneck.p" placeholder="Dove si perde più tempo oggi?"></textarea>
+              </div>
+            </fieldset>
+
+            <!-- STEP 4 — message & consent -->
+            <fieldset class="quiz-step" data-step="4" hidden>
+              <h3 data-i18n="quiz.s4.title">Un ultimo messaggio</h3>
+              <div class="form-field">
+                <label for="q-message" data-i18n="quiz.f.message">Raccontaci in due righe</label>
+                <textarea id="q-message" name="message" data-i18n-attr="placeholder:quiz.f.message.p" placeholder="Cosa fa la tua azienda e cosa vorresti migliorare?"></textarea>
+              </div>
+              <label class="quiz-consent">
+                <input type="checkbox" id="q-consent" name="consent" required />
+                <span data-i18n="quiz.f.consent">Acconsento al trattamento dei miei dati per essere ricontattato, secondo la privacy policy. *</span>
+              </label>
+            </fieldset>
+
+            <div class="quiz-nav">
+              <button type="button" class="btn btn-ghost" id="quizPrev" data-i18n="quiz.prev" hidden>Indietro</button>
+              <div class="quiz-nav-right">
+                <span class="quiz-count"><span id="quizCurrent">1</span> / 4</span>
+                <button type="button" class="btn btn-primary btn-arrow" id="quizNext" data-i18n="quiz.next">Avanti</button>
+                <button type="submit" class="btn btn-primary btn-arrow" id="quizSubmit" data-i18n="quiz.submit" hidden>Invia richiesta</button>
+              </div>
+            </div>
+            <p class="form-status" id="leadStatus" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </section>

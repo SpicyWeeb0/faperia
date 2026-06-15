@@ -40,7 +40,26 @@
     'footer.note':      { it: 'Assistente AI · può sbagliare', en: 'AI assistant · may make mistakes' },
     'error.network':    { it: 'Connessione interrotta. Riprova fra qualche istante.', en: 'Connection lost. Try again in a moment.' },
     'error.rate':       { it: 'Stai inviando troppi messaggi. Riprova fra qualche minuto.', en: 'Too many messages. Please try again in a few minutes.' },
-    'error.generic':    { it: 'Qualcosa è andato storto. Riprova.', en: 'Something went wrong. Please try again.' }
+    'error.generic':    { it: 'Qualcosa è andato storto. Riprova.', en: 'Something went wrong. Please try again.' },
+
+    /* Handoff (talk-to-a-human) */
+    'handoff.cta':            { it: 'Parla con noi', en: 'Talk to us' },
+    'handoff.title':          { it: 'Parla con una persona', en: 'Talk to a real person' },
+    'handoff.intro':          { it: 'Lasciaci la tua email. Ti rispondiamo entro 24 ore lavorative con il contesto di questa conversazione.', en: 'Leave us your email. We’ll get back to you within 24 working hours with the context of this conversation.' },
+    'handoff.email.label':    { it: 'Email *', en: 'Email *' },
+    'handoff.email.placeholder': { it: 'tuo@email.it', en: 'your@email.com' },
+    'handoff.name.label':     { it: 'Nome (facoltativo)', en: 'Name (optional)' },
+    'handoff.name.placeholder': { it: 'Mario Rossi', en: 'Jane Doe' },
+    'handoff.message.label':  { it: 'Cosa ti serve? (facoltativo)', en: 'What do you need? (optional)' },
+    'handoff.message.placeholder': { it: 'Es. capire se il Quick Win è adatto alla mia azienda', en: 'E.g. understanding if Quick Win is right for my business' },
+    'handoff.submit':         { it: 'Invia richiesta', en: 'Send request' },
+    'handoff.cancel':         { it: 'Annulla', en: 'Cancel' },
+    'handoff.back':           { it: 'Torna alla chat', en: 'Back to chat' },
+    'handoff.sending':        { it: 'Invio in corso…', en: 'Sending…' },
+    'handoff.success.title':  { it: 'Grazie.', en: 'Thanks.' },
+    'handoff.success.body':   { it: 'Abbiamo ricevuto la tua richiesta. Ti scriviamo a {email} entro 24 ore lavorative.', en: 'We received your request. We’ll write to {email} within 24 working hours.' },
+    'handoff.error.email':    { it: 'Inserisci un’email valida.', en: 'Please enter a valid email.' },
+    'handoff.error.send':     { it: 'Invio fallito. Riprova fra poco.', en: 'Send failed. Please try again shortly.' }
   };
 
   function lang() {
@@ -82,6 +101,7 @@
     var root = document.createElement('div');
     root.className = 'fp-chat';
     root.setAttribute('data-state', 'closed');
+    root.setAttribute('data-mode', 'chat');
     root.innerHTML = ''
       + '<button class="fp-chat-fab" type="button" aria-label="" aria-haspopup="dialog" aria-expanded="false">'
       +   '<svg viewBox="0 0 24 24" aria-hidden="true">'
@@ -98,6 +118,7 @@
       +       '<div class="fp-chat-title" id="fp-chat-title"></div>'
       +       '<div class="fp-chat-subtitle"></div>'
       +     '</div>'
+      +     '<button class="fp-chat-handoff-btn" type="button"></button>'
       +     '<button class="fp-chat-close" type="button" aria-label="">×</button>'
       +   '</header>'
       +   '<div class="fp-chat-disclaimer-banner" hidden>'
@@ -114,6 +135,35 @@
       +     '</button>'
       +   '</form>'
       +   '<p class="fp-chat-footer-note"></p>'
+      +   '<section class="fp-chat-handoff" hidden>'
+      +     '<h3 class="fp-chat-handoff-title"></h3>'
+      +     '<p class="fp-chat-handoff-intro"></p>'
+      +     '<form class="fp-chat-handoff-form" novalidate>'
+      +       '<label class="fp-chat-field">'
+      +         '<span class="fp-chat-field-label" data-key="handoff.email.label"></span>'
+      +         '<input type="email" name="email" required autocomplete="email" />'
+      +       '</label>'
+      +       '<label class="fp-chat-field">'
+      +         '<span class="fp-chat-field-label" data-key="handoff.name.label"></span>'
+      +         '<input type="text" name="name" autocomplete="name" maxlength="80" />'
+      +       '</label>'
+      +       '<label class="fp-chat-field">'
+      +         '<span class="fp-chat-field-label" data-key="handoff.message.label"></span>'
+      +         '<textarea name="message" rows="3" maxlength="800"></textarea>'
+      +       '</label>'
+      +       '<p class="fp-chat-handoff-error" role="alert" hidden></p>'
+      +       '<div class="fp-chat-handoff-actions">'
+      +         '<button type="button" class="fp-chat-handoff-cancel"></button>'
+      +         '<button type="submit" class="fp-chat-handoff-submit"></button>'
+      +       '</div>'
+      +     '</form>'
+      +     '<div class="fp-chat-handoff-success" hidden>'
+      +       '<div class="fp-chat-handoff-success-icon" aria-hidden="true">✓</div>'
+      +       '<h3 class="fp-chat-handoff-success-title"></h3>'
+      +       '<p class="fp-chat-handoff-success-body"></p>'
+      +       '<button type="button" class="fp-chat-handoff-success-close"></button>'
+      +     '</div>'
+      +   '</section>'
       + '</section>';
 
     document.body.appendChild(root);
@@ -132,6 +182,22 @@
     els.textarea      = root.querySelector('.fp-chat-input textarea');
     els.sendBtn       = root.querySelector('.fp-chat-send');
     els.footerNote    = root.querySelector('.fp-chat-footer-note');
+
+    els.handoffBtn        = root.querySelector('.fp-chat-handoff-btn');
+    els.handoffPanel      = root.querySelector('.fp-chat-handoff');
+    els.handoffTitle      = root.querySelector('.fp-chat-handoff-title');
+    els.handoffIntro      = root.querySelector('.fp-chat-handoff-intro');
+    els.handoffForm       = root.querySelector('.fp-chat-handoff-form');
+    els.handoffEmail      = root.querySelector('.fp-chat-handoff-form [name="email"]');
+    els.handoffName       = root.querySelector('.fp-chat-handoff-form [name="name"]');
+    els.handoffMessage    = root.querySelector('.fp-chat-handoff-form [name="message"]');
+    els.handoffError      = root.querySelector('.fp-chat-handoff-error');
+    els.handoffCancel     = root.querySelector('.fp-chat-handoff-cancel');
+    els.handoffSubmit     = root.querySelector('.fp-chat-handoff-submit');
+    els.handoffSuccess    = root.querySelector('.fp-chat-handoff-success');
+    els.handoffSuccessTitle = root.querySelector('.fp-chat-handoff-success-title');
+    els.handoffSuccessBody  = root.querySelector('.fp-chat-handoff-success-body');
+    els.handoffSuccessClose = root.querySelector('.fp-chat-handoff-success-close');
   }
 
   function applyStrings() {
@@ -146,6 +212,24 @@
     els.textarea.setAttribute('aria-label', t('input.placeholder'));
     els.sendBtn.setAttribute('aria-label', t('send.aria'));
     els.footerNote.textContent = t('footer.note');
+
+    if (els.handoffBtn) {
+      els.handoffBtn.textContent = t('handoff.cta');
+      els.handoffBtn.setAttribute('aria-label', t('handoff.cta'));
+      els.handoffTitle.textContent = t('handoff.title');
+      els.handoffIntro.textContent = t('handoff.intro');
+      els.handoffEmail.setAttribute('placeholder', t('handoff.email.placeholder'));
+      els.handoffName.setAttribute('placeholder', t('handoff.name.placeholder'));
+      els.handoffMessage.setAttribute('placeholder', t('handoff.message.placeholder'));
+      els.handoffCancel.textContent = t('handoff.cancel');
+      els.handoffSubmit.textContent = t('handoff.submit');
+      els.handoffSuccessClose.textContent = t('handoff.back');
+      // Field labels by data-key (set via spans inside <label>)
+      Array.prototype.slice.call(els.handoffForm.querySelectorAll('[data-key]')).forEach(function (el) {
+        var k = el.getAttribute('data-key');
+        if (k) el.textContent = t(k);
+      });
+    }
 
     // Refresh greeting text if greeting message is the only message
     if (state.messages.length === 0 && state.greetingShown) {
@@ -162,6 +246,104 @@
   function dismissDisclaimer() {
     els.discBanner.hidden = true;
     try { localStorage.setItem(STORAGE_NOTICE_KEY, '1'); } catch (e) {}
+  }
+
+  /* ---------------- Handoff (talk to a human) ---------------- */
+  function showHandoffForm() {
+    if (!els.handoffPanel) return;
+    state.handoffOpen = true;
+    els.handoffPanel.hidden = false;
+    els.root.setAttribute('data-mode', 'handoff');
+    // Hide the success state if it was lingering
+    els.handoffSuccess.hidden = true;
+    els.handoffForm.hidden = false;
+    els.handoffError.hidden = true;
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      setTimeout(function () { els.handoffEmail && els.handoffEmail.focus(); }, 100);
+    }
+  }
+
+  function hideHandoffForm() {
+    if (!els.handoffPanel) return;
+    state.handoffOpen = false;
+    els.handoffPanel.hidden = true;
+    els.root.setAttribute('data-mode', 'chat');
+  }
+
+  function isValidEmail(s) {
+    return /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(String(s).trim());
+  }
+
+  async function submitHandoff(e) {
+    if (e) e.preventDefault();
+    if (state.handoffSending) return;
+
+    var email = (els.handoffEmail.value || '').trim();
+    var name = (els.handoffName.value || '').trim();
+    var message = (els.handoffMessage.value || '').trim();
+
+    if (!isValidEmail(email)) {
+      els.handoffError.textContent = t('handoff.error.email');
+      els.handoffError.hidden = false;
+      els.handoffEmail.focus();
+      return;
+    }
+
+    state.handoffSending = true;
+    els.handoffSubmit.disabled = true;
+    els.handoffCancel.disabled = true;
+    els.handoffSubmit.textContent = t('handoff.sending');
+    els.handoffError.hidden = true;
+
+    try {
+      var resp = await fetch(API_BASE + '/handoff', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          sessionId: state.sessionId,
+          lang: lang(),
+          page: location.pathname,
+          url: location.href,
+          email: email,
+          name: name,
+          message: message,
+          transcript: state.messages.map(function (m) {
+            return { role: m.role, content: m.content };
+          })
+        })
+      });
+
+      if (!resp.ok) {
+        var msg = t('handoff.error.send');
+        try {
+          var data = await resp.json();
+          if (data && data.error) msg = msg + ' (' + data.error + ')';
+        } catch (er) {}
+        els.handoffError.textContent = msg;
+        els.handoffError.hidden = false;
+        return;
+      }
+
+      // Success — show success state
+      els.handoffForm.hidden = true;
+      var body = t('handoff.success.body').replace('{email}', email);
+      els.handoffSuccessTitle.textContent = t('handoff.success.title');
+      els.handoffSuccessBody.textContent = body;
+      els.handoffSuccess.hidden = false;
+
+      // Clear form fields for next time
+      els.handoffEmail.value = '';
+      els.handoffName.value = '';
+      els.handoffMessage.value = '';
+    } catch (err) {
+      els.handoffError.textContent = t('handoff.error.send');
+      els.handoffError.hidden = false;
+    } finally {
+      state.handoffSending = false;
+      els.handoffSubmit.disabled = false;
+      els.handoffCancel.disabled = false;
+      els.handoffSubmit.textContent = t('handoff.submit');
+    }
   }
 
   /* ---------------- Open / close ---------------- */
@@ -480,6 +662,13 @@
     els.closeBtn.addEventListener('click', closeChat);
     els.discDismiss.addEventListener('click', dismissDisclaimer);
 
+    if (els.handoffBtn) {
+      els.handoffBtn.addEventListener('click', showHandoffForm);
+      els.handoffCancel.addEventListener('click', hideHandoffForm);
+      els.handoffForm.addEventListener('submit', submitHandoff);
+      els.handoffSuccessClose.addEventListener('click', hideHandoffForm);
+    }
+
     els.textarea.addEventListener('input', function () {
       autoGrowTextarea();
       updateSendButton();
@@ -495,9 +684,11 @@
       submitMessage();
     });
 
-    // Esc closes
+    // Esc closes the handoff form first, then the chat itself
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && state.open) closeChat();
+      if (e.key !== 'Escape' || !state.open) return;
+      if (state.handoffOpen) { hideHandoffForm(); return; }
+      closeChat();
     });
 
     // Observe language changes (driven by existing script.js setting <html lang>)
