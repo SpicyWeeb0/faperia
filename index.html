@@ -327,6 +327,7 @@
                     <option data-i18n="quiz.sector.ecommerce">E-commerce</option>
                     <option data-i18n="quiz.sector.edilizia">Edilizia / Impianti</option>
                     <option data-i18n="quiz.sector.food">Food &amp; Beverage</option>
+                    <option data-i18n="quiz.sector.finanza">Finanza / Contabilità</option>
                     <option data-i18n="quiz.sector.altro">Altro</option>
                   </select>
                 </div>
@@ -340,6 +341,10 @@
                     <option data-i18n="quiz.size.s4">50+ dipendenti</option>
                   </select>
                 </div>
+              </div>
+              <div class="form-field quiz-conditional" id="q-sector-other-field" hidden>
+                <label for="q-sector-other" data-i18n="quiz.f.sectorOther">Descrivi brevemente la tua attività *</label>
+                <textarea id="q-sector-other" name="sectorOther" data-i18n-attr="placeholder:quiz.f.sectorOther.p" placeholder="Di cosa si occupa la tua azienda?"></textarea>
               </div>
             </fieldset>
 
@@ -363,12 +368,18 @@
                   <label class="quiz-opt"><input type="checkbox" name="tools" value="Email" /><span data-i18n="quiz.tool.email">Email</span></label>
                   <label class="quiz-opt"><input type="checkbox" name="tools" value="E-commerce" /><span data-i18n="quiz.tool.ecommerce">E-commerce</span></label>
                   <label class="quiz-opt"><input type="checkbox" name="tools" value="Excel/fogli" /><span data-i18n="quiz.tool.excel">Excel / fogli</span></label>
+                  <label class="quiz-opt"><input type="checkbox" name="tools" value="Software di contabilità" /><span data-i18n="quiz.tool.contabilita">Software di contabilità</span></label>
                   <label class="quiz-opt"><input type="checkbox" name="tools" value="Altro" /><span data-i18n="quiz.tool.altro">Altro</span></label>
                 </div>
               </div>
               <div class="form-field">
-                <label for="q-bottleneck" data-i18n="quiz.f.bottleneck">Qual è il collo di bottiglia principale?</label>
+                <label for="q-bottleneck" data-i18n="quiz.f.bottleneck">Secondo te, qual è il collo di bottiglia principale?</label>
                 <textarea id="q-bottleneck" name="bottleneck" data-i18n-attr="placeholder:quiz.f.bottleneck.p" placeholder="Dove si perde più tempo oggi?"></textarea>
+              </div>
+              <div class="form-field">
+                <label for="q-routine" data-i18n="quiz.f.routine">C’è un’attività ripetitiva che svolgi o produci spesso? Descrivila e dicci ogni quanto la fai</label>
+                <p class="form-note" data-i18n="quiz.f.routine.hint">Per esempio: preparare a mano file Excel per scambiarli, correggerli o cambiarne il formato prima di importarli in un altro software; creare report diversi cambiando le query su dati che arrivano da sistemi separati; gestire la chat o il software di vendita per rispondere alle richieste reali dei clienti; organizzare il flusso documentale e l’archiviazione sicura per categorie, così da ritrovare tutto facilmente; inserire dati nel gestionale ogni giorno.</p>
+                <textarea id="q-routine" name="routine" data-i18n-attr="placeholder:quiz.f.routine.p" placeholder="Descrivi l’attività e con quale frequenza (ogni giorno, ogni settimana…)"></textarea>
               </div>
             </fieldset>
 

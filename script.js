@@ -377,7 +377,10 @@
     'quiz.sector.ecommerce':   { it: 'E-commerce', en: 'E-commerce' },
     'quiz.sector.edilizia':    { it: 'Edilizia / Impianti', en: 'Construction / Installations' },
     'quiz.sector.food':        { it: 'Food &amp; Beverage', en: 'Food &amp; Beverage' },
+    'quiz.sector.finanza':     { it: 'Finanza / Contabilità', en: 'Finance / Accounting' },
     'quiz.sector.altro':       { it: 'Altro', en: 'Other' },
+    'quiz.f.sectorOther':      { it: 'Descrivi brevemente la tua attività *', en: 'Briefly describe your business *' },
+    'quiz.f.sectorOther.p':    { it: 'Di cosa si occupa la tua azienda?', en: 'What does your company do?' },
     'quiz.size.s1':     { it: '1\u20135 dipendenti', en: '1\u20135 employees' },
     'quiz.size.s2':     { it: '6\u201320 dipendenti', en: '6\u201320 employees' },
     'quiz.size.s3':     { it: '21\u201350 dipendenti', en: '21\u201350 employees' },
@@ -395,10 +398,14 @@
     'quiz.tool.email':  { it: 'Email', en: 'Email' },
     'quiz.tool.ecommerce': { it: 'E-commerce', en: 'E-commerce' },
     'quiz.tool.excel':  { it: 'Excel / fogli', en: 'Excel / spreadsheets' },
+    'quiz.tool.contabilita': { it: 'Software di contabilità', en: 'Accounting software' },
     'quiz.tool.altro':  { it: 'Altro', en: 'Other' },
 
-    'quiz.f.bottleneck':   { it: 'Qual \u00e8 il collo di bottiglia principale?', en: 'What is your main bottleneck?' },
+    'quiz.f.bottleneck':   { it: 'Secondo te, qual \u00e8 il collo di bottiglia principale?', en: 'In your opinion, what is your main bottleneck?' },
     'quiz.f.bottleneck.p': { it: 'Dove si perde pi\u00f9 tempo oggi?', en: 'Where is the most time lost today?' },
+    'quiz.f.routine':      { it: 'C\u2019\u00e8 un\u2019attivit\u00e0 ripetitiva che svolgi o produci spesso? Descrivila e dicci ogni quanto la fai', en: 'Is there a repetitive task you carry out or produce often? Describe it and tell us how frequently' },
+    'quiz.f.routine.hint': { it: 'Per esempio: preparare a mano file Excel per scambiarli, correggerli o cambiarne il formato prima di importarli in un altro software; creare report diversi cambiando le query su dati che arrivano da sistemi separati; gestire la chat o il software di vendita per rispondere alle richieste reali dei clienti; organizzare il flusso documentale e l\u2019archiviazione sicura per categorie, cos\u00ec da ritrovare tutto facilmente; inserire dati nel gestionale ogni giorno.', en: 'For example: manually preparing Excel files to exchange, correct or reformat them before importing into another software; building different reports by changing queries on data coming from separate systems; running the sales chat or software to meet real customer requests; organising document flow and safe storage by category so everything is easy to find; entering data into your software every day.' },
+    'quiz.f.routine.p':    { it: 'Descrivi l\u2019attivit\u00e0 e con quale frequenza (ogni giorno, ogni settimana\u2026)', en: 'Describe the task and how often (daily, weekly\u2026)' },
     'quiz.f.message':      { it: 'Raccontaci in due righe', en: 'Tell us in a couple of lines' },
     'quiz.f.message.p':    { it: 'Cosa fa la tua azienda e cosa vorresti migliorare?', en: 'What does your company do and what would you improve?' },
     'quiz.f.consent':      { it: 'Acconsento al trattamento dei miei dati per essere ricontattato, secondo la privacy policy. *', en: 'I consent to the processing of my data to be contacted, per the privacy policy. *' },
@@ -588,11 +595,38 @@
       const total = steps.length;
       let idx = 0;
 
+      // Step 2: reveal the free-text business description only when "Other" sector is chosen,
+      // and make it required only while visible so it counts as a mandatory field.
+      const sectorSel = leadForm.querySelector('#q-sector');
+      const sectorOtherField = document.getElementById('q-sector-other-field');
+      const sectorOtherInput = document.getElementById('q-sector-other');
+      function syncSectorOther() {
+        if (!sectorSel || !sectorOtherField || !sectorOtherInput) return;
+        const v = sectorSel.value;
+        const isOther = v === 'Altro' || v === 'Other';
+        sectorOtherField.hidden = !isOther;
+        sectorOtherInput.required = isOther;
+        if (!isOther) sectorOtherInput.value = '';
+      }
+      if (sectorSel) sectorSel.addEventListener('change', syncSectorOther);
+      syncSectorOther();
+
       const msg = (it, en) => (currentLang() === 'en' ? en : it);
       const fieldsOf = (step) => step.querySelectorAll('input, select, textarea');
-      const stepValid = (n) =>
-        Array.prototype.every.call(fieldsOf(steps[n]), (f) => f.checkValidity());
+      // Trim text entries so a whitespace-only value can't satisfy a required field.
+      const trimFields = (step) => {
+        Array.prototype.forEach.call(fieldsOf(step), (f) => {
+          if (f.value && (f.tagName === 'TEXTAREA' || f.type === 'text' || f.type === 'email' || f.type === 'tel')) {
+            f.value = f.value.trim();
+          }
+        });
+      };
+      const stepValid = (n) => {
+        trimFields(steps[n]);
+        return Array.prototype.every.call(fieldsOf(steps[n]), (f) => f.checkValidity());
+      };
       const reportStep = (n) => {
+        trimFields(steps[n]);
         const invalid = Array.prototype.find.call(fieldsOf(steps[n]), (f) => !f.checkValidity());
         if (invalid) { invalid.reportValidity(); return false; }
         return true;
@@ -637,10 +671,12 @@
           company: (data.get('company') || '').toString().trim(),
           phone: (data.get('phone') || '').toString().trim(),
           sector: (data.get('sector') || '').toString(),
+          sectorOther: (data.get('sectorOther') || '').toString().trim(),
           size: (data.get('size') || '').toString(),
           interest: (data.get('interest') || '').toString(),
           tools: data.getAll('tools').map(String),
           bottleneck: (data.get('bottleneck') || '').toString().trim(),
+          routine: (data.get('routine') || '').toString().trim(),
           message: (data.get('message') || '').toString().trim(),
           consent: !!data.get('consent'),
           page: location.pathname,
@@ -670,17 +706,19 @@
             msg('Azienda', 'Company') + ': ' + payload.company,
             msg('Telefono', 'Phone') + ': ' + payload.phone,
             msg('Settore', 'Sector') + ': ' + payload.sector,
+            payload.sectorOther ? msg('Dettaglio attività', 'Business detail') + ': ' + payload.sectorOther : null,
             msg('Dimensione', 'Size') + ': ' + payload.size,
             msg('Interesse', 'Interest') + ': ' + payload.interest,
             msg('Strumenti', 'Tools') + ': ' + payload.tools.join(', '),
             msg('Collo di bottiglia', 'Bottleneck') + ': ' + payload.bottleneck,
+            msg('Attività ripetitiva', 'Repetitive task') + ': ' + payload.routine,
             '',
             msg('Messaggio', 'Message') + ':',
             payload.message
           ];
           window.location.href = 'mailto:hello@faperia.it'
             + '?subject=' + encodeURIComponent(subject)
-            + '&body=' + encodeURIComponent(lines.join('\n'));
+            + '&body=' + encodeURIComponent(lines.filter((l) => l !== null).join('\n'));
           if (statusEl) statusEl.textContent = msg(
             'Apertura del client email\u2026 se non succede nulla, scrivici a hello@faperia.it',
             'Opening your email client\u2026 if nothing happens, write to hello@faperia.it'

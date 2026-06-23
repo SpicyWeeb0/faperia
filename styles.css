@@ -900,6 +900,7 @@ section {
   min-height: 140px;
   line-height: 1.5;
 }
+.quiz-conditional textarea { min-height: 88px; }
 .form-note {
   font-size: 0.85rem;
   color: var(--muted);
