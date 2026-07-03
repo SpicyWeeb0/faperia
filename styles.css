@@ -110,10 +110,18 @@ strong { font-weight: 600; color: var(--ink); }
   top: 0;
   z-index: 50;
   background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: saturate(140%) blur(14px);
-  -webkit-backdrop-filter: saturate(140%) blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color var(--t-base), background var(--t-base);
+}
+/* blur lives on a pseudo-element: backdrop-filter on .header itself would make it
+   the containing block for the fixed mobile .nav, collapsing the menu panel */
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
 }
 .header.scrolled {
   border-bottom-color: var(--line);
