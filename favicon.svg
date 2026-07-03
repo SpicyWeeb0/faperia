@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#2F4BFF"/>
+  <!-- blueprint grid -->
+  <g stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="1">
+    <path d="M16 0v64M32 0v64M48 0v64M0 16h64M0 32h64M0 48h64"/>
+  </g>
+  <!-- F letterform, Space-Grotesk-like geometric strokes -->
+  <g fill="#FFFFFF">
+    <rect x="20" y="14" width="8" height="36" rx="2"/>
+    <rect x="20" y="14" width="26" height="8" rx="2"/>
+    <rect x="20" y="29" width="20" height="8" rx="2"/>
+  </g>
+</svg>

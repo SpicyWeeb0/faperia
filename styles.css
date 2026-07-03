@@ -210,6 +210,9 @@ strong { font-weight: 600; color: var(--ink); }
 .hamburger.is-open span:nth-child(3) { top: 14px; transform: rotate(-45deg); }
 
 /* ---------- Buttons ---------- */
+/* Class display rules (.btn etc.) would otherwise beat the UA [hidden] rule */
+[hidden] { display: none !important; }
+
 .btn {
   display: inline-flex;
   align-items: center;

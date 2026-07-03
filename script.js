@@ -74,7 +74,7 @@
     'home.offer1.title':  { it: 'Audit Express', en: 'Audit Express' },
     'home.offer1.meta':   { it: '5 giorni lavorativi', en: '5 working days' },
     'home.offer1.price':  { it: '\u20ac250', en: '\u20ac250' },
-    'home.offer1.psub':   { it: 'pagamento anticipato \u2022 detratto dall\u2019implementazione', en: 'paid upfront \u2022 deducted from any implementation' },
+    'home.offer1.psub':   { it: 'pagamento anticipato', en: 'paid upfront' },
     'home.offer1.f1':     { it: 'Call di scoperta da <strong>90 minuti</strong>', en: '<strong>90\u2011minute</strong> discovery call' },
     'home.offer1.f2':     { it: 'Mappatura dei <strong>3 colli di bottiglia</strong> principali', en: 'Map your <strong>top 3 bottlenecks</strong>' },
     'home.offer1.f3':     { it: 'Report scritto con ROI per intervento', en: 'Written report with per\u2011intervention ROI' },
@@ -182,13 +182,13 @@
     'offerte.audit.del.l3':     { it: 'Report scritto: i 3 colli di bottiglia principali, ore ed euro persi al mese, interventi consigliati, stima ROI per intervento', en: 'Written report: top 3 bottlenecks, hours and euros wasted per month, recommended interventions, ROI estimate per intervention' },
     'offerte.audit.del.l4':     { it: 'Call di restituzione da <strong>30 minuti</strong> per leggere insieme i risultati', en: '<strong>30\u2011minute</strong> readout call to walk through findings' },
     'offerte.audit.note.h':     { it: 'Il prezzo del primo passo', en: 'The price of the first step' },
-    'offerte.audit.note.p':     { it: 'I <strong>\u20ac250</strong> sono pagati in anticipo \u2014 mai gratis. \u00c8 il modo per filtrare chi \u00e8 davvero interessato e per pagare il lavoro fatto, anche se poi non si va avanti. Se entro <strong>30 giorni</strong> prenoti una Quick Win o un Operations Upgrade, i <strong>\u20ac250</strong> sono interamente detratti dal prezzo dell\u2019implementazione.', en: 'The <strong>\u20ac250</strong> is paid upfront \u2014 never free. It filters out non\u2011serious prospects and pays for the work even if you don\u2019t move forward. If you book a Quick Win or Operations Upgrade within <strong>30 days</strong>, the <strong>\u20ac250</strong> is fully deducted from the implementation price.' },
+    'offerte.audit.note.p':     { it: 'Se entro <strong>30 giorni</strong> prenoti una Quick Win o un Operations Upgrade, i <strong>\u20ac250</strong> sono interamente detratti dal prezzo dell\u2019implementazione.', en: 'If you book a Quick Win or Operations Upgrade within <strong>30 days</strong>, the <strong>\u20ac250</strong> is fully deducted from the implementation price.' },
 
     /* Quick Win detail */
     'offerte.qw.eyebrow':   { it: 'OFFERTA 2', en: 'OFFER 2' },
     'offerte.qw.title':     { it: 'Quick Win', en: 'Quick Win' },
     'offerte.qw.tag':       { it: 'UNA ROUTINE NOTA, AUTOMATIZZATA END\u2011TO\u2011END', en: 'ONE KNOWN ROUTINE, AUTOMATED END\u2011TO\u2011END' },
-    'offerte.qw.price.sub': { it: 'tariffa fondatori \u2022 listino successivo \u20ac1.500\u2013\u20ac2.500', en: 'founding rate \u2022 list price thereafter \u20ac1,500\u2013\u20ac2,500' },
+    'offerte.qw.price.sub': { it: 'tariffa fondatori', en: 'founding rate' },
     'offerte.qw.timeline.v':{ it: '2 settimane', en: '2 weeks' },
     'offerte.qw.metric.v':  { it: 'Ore risparmiate per settimana, verificate dopo 30 giorni', en: 'Hours saved per week, verified after 30 days' },
     'offerte.qw.scope.l':   { it: 'AMBITO', en: 'SCOPE' },
@@ -208,7 +208,7 @@
     'offerte.ou.eyebrow':   { it: 'OFFERTA 3', en: 'OFFER 3' },
     'offerte.ou.title':     { it: 'Operations Upgrade', en: 'Operations Upgrade' },
     'offerte.ou.tag':       { it: 'UN\u2019INTERA AREA DI PROCESSO, RIPROGETTATA', en: 'AN ENTIRE PROCESS AREA, REDESIGNED' },
-    'offerte.ou.price.sub': { it: 'tariffa fondatori \u2022 listino successivo \u20ac4.500\u2013\u20ac7.500', en: 'founding rate \u2022 list price thereafter \u20ac4,500\u2013\u20ac7,500' },
+    'offerte.ou.price.sub': { it: 'tariffa fondatori', en: 'founding rate' },
     'offerte.ou.timeline.v':{ it: '4 settimane', en: '4 weeks' },
     'offerte.ou.metric.v':  { it: 'Ore risparmiate + una metrica secondaria (tempo di risposta, tasso di errore, ricavi)', en: 'Hours saved + one secondary metric (response time, error rate, revenue)' },
     'offerte.ou.scope.l':   { it: 'AMBITO', en: 'SCOPE' },
@@ -273,7 +273,6 @@
     'come.m4.b': { it: 'Ogni stima nel report ha un livello di confidenza dichiarato \u2014 alta, media o bassa. Una bassa confidenza dichiarata \u00e8 meglio di un\u2019alta gonfiata.', en: 'Every estimate in the report has a stated confidence level \u2014 high, medium, or low. A stated low confidence beats an inflated high.' },
 
     'come.quote':       { it: 'L\u2019audit di Faperia non \u00e8 un checklist generico. Quello che ti consegniamo \u00e8 quello che abbiamo trovato nel tuo business, non un template applicato.', en: 'The Faperia audit is not a generic checklist. What we hand you is what we found in your business \u2014 not a template applied to you.' },
-    'come.quote.cite':  { it: 'Dal template del report cliente \u2014 v1', en: 'From the customer report template \u2014 v1' },
 
     'come.cta.h':       { it: 'Cinque giorni. Tre colli di bottiglia. Una decisione chiara.', en: 'Five days. Three bottlenecks. One clear decision.' },
     'come.cta.p':       { it: 'L\u2019audit \u00e8 il modo a basso rischio per scoprire se Faperia fa per te.', en: 'The audit is the low\u2011risk way to find out if Faperia is right for you.' },
@@ -408,11 +407,41 @@
     'quiz.f.routine.p':    { it: 'Descrivi l\u2019attivit\u00e0 e con quale frequenza (ogni giorno, ogni settimana\u2026)', en: 'Describe the task and how often (daily, weekly\u2026)' },
     'quiz.f.message':      { it: 'Raccontaci in due righe', en: 'Tell us in a couple of lines' },
     'quiz.f.message.p':    { it: 'Cosa fa la tua azienda e cosa vorresti migliorare?', en: 'What does your company do and what would you improve?' },
-    'quiz.f.consent':      { it: 'Acconsento al trattamento dei miei dati per essere ricontattato, secondo la privacy policy. *', en: 'I consent to the processing of my data to be contacted, per the privacy policy. *' },
+    'quiz.f.consent':      { it: 'Acconsento al trattamento dei miei dati per essere ricontattato, secondo la <a href="privacy.html" target="_blank" rel="noopener">privacy policy</a>. *', en: 'I consent to the processing of my data to be contacted, per the <a href="privacy.html" target="_blank" rel="noopener">privacy policy</a>. *' },
 
     'quiz.prev':        { it: 'Indietro', en: 'Back' },
     'quiz.next':        { it: 'Avanti', en: 'Next' },
-    'quiz.submit':      { it: 'Invia richiesta', en: 'Send request' }
+    'quiz.submit':      { it: 'Invia richiesta', en: 'Send request' },
+
+    /* ---- Privacy policy page ---- */
+    'priv.title':    { it: 'Privacy Policy — Faperia', en: 'Privacy Policy — Faperia' },
+    'priv.meta':     { it: 'Come Faperia raccoglie, usa e protegge i tuoi dati personali.', en: 'How Faperia collects, uses and protects your personal data.' },
+    'priv.hero.h1':  { it: 'Privacy Policy', en: 'Privacy Policy' },
+    'priv.hero.lead':{ it: 'Questa pagina spiega quali dati personali raccogliamo attraverso questo sito, perché li raccogliamo e come li trattiamo. Ultimo aggiornamento: <strong>3 luglio 2026</strong>.', en: 'This page explains what personal data we collect through this website, why we collect it and how we handle it. Last updated: <strong>3 July 2026</strong>.' },
+
+    'priv.s1.h': { it: 'Titolare del trattamento', en: 'Data controller' },
+    'priv.s1.b': { it: 'Il titolare del trattamento è <strong>Faperia</strong> (Umbria, Italia). Per qualsiasi richiesta relativa ai tuoi dati puoi scriverci tramite la <a href="contatti.html">pagina contatti</a>.', en: 'The data controller is <strong>Faperia</strong> (Umbria, Italy). For any request concerning your data you can reach us via the <a href="contatti.html">contact page</a>.' },
+
+    'priv.s2.h': { it: 'Quali dati raccogliamo', en: 'What data we collect' },
+    'priv.s2.b': { it: '<strong>Questionario e moduli di contatto:</strong> nome, email, azienda, telefono (facoltativo), settore, dimensione, interesse, strumenti usati e il messaggio che scrivi. Li raccogliamo solo se compili e invii un modulo.<br><br><strong>Chat:</strong> i messaggi che invii all’assistente sul sito, usati solo per generare la risposta.<br><br><strong>Dati tecnici:</strong> l’indirizzo IP viene usato in forma temporanea per limitare l’abuso dei moduli (rate limiting) e non viene associato al tuo profilo.', en: '<strong>Questionnaire and contact forms:</strong> name, email, company, phone (optional), sector, company size, interest, tools used and the message you write. We collect them only if you fill in and submit a form.<br><br><strong>Chat:</strong> the messages you send to the on-site assistant, used only to generate the reply.<br><br><strong>Technical data:</strong> your IP address is used temporarily to limit form abuse (rate limiting) and is not linked to your profile.' },
+
+    'priv.s3.h': { it: 'Perché li usiamo', en: 'Why we use it' },
+    'priv.s3.b': { it: 'Usiamo i dati esclusivamente per <strong>rispondere alla tua richiesta</strong> e ricontattarti in merito ai nostri servizi. Base giuridica: il tuo consenso (art. 6.1.a GDPR) e le misure precontrattuali adottate su tua richiesta (art. 6.1.b GDPR). Nessuna profilazione, nessuna cessione a terzi per marketing.', en: 'We use your data exclusively to <strong>answer your request</strong> and get back to you about our services. Legal basis: your consent (art. 6.1.a GDPR) and pre-contractual steps taken at your request (art. 6.1.b GDPR). No profiling, no sale or transfer to third parties for marketing.' },
+
+    'priv.s4.h': { it: 'Dove sono conservati', en: 'Where it is stored' },
+    'priv.s4.b': { it: 'Il sito e i moduli sono gestiti tramite l’infrastruttura di <strong>Cloudflare</strong> (hosting, elaborazione e database), che agisce come responsabile del trattamento. Se in futuro attiveremo notifiche email, i dati potranno transitare da un fornitore di invio email, sempre nel rispetto del GDPR.', en: 'The website and its forms run on <strong>Cloudflare</strong> infrastructure (hosting, processing and database), acting as data processor. If we enable email notifications in the future, data may pass through an email delivery provider, always in compliance with the GDPR.' },
+
+    'priv.s5.h': { it: 'Per quanto tempo', en: 'For how long' },
+    'priv.s5.b': { it: 'Conserviamo i dati per il tempo necessario a gestire la tua richiesta e l’eventuale rapporto di lavoro che ne segue. Puoi chiederne la cancellazione in qualsiasi momento.', en: 'We keep your data for as long as needed to handle your request and any working relationship that follows. You can ask for deletion at any time.' },
+
+    'priv.s6.h': { it: 'I tuoi diritti', en: 'Your rights' },
+    'priv.s6.b': { it: 'Ai sensi degli artt. 15–22 GDPR puoi chiedere in qualsiasi momento: accesso ai tuoi dati, rettifica, cancellazione, limitazione del trattamento, opposizione e portabilità. Puoi inoltre revocare il consenso e presentare reclamo al <strong>Garante per la protezione dei dati personali</strong>.', en: 'Under articles 15–22 GDPR you can at any time request: access to your data, rectification, deletion, restriction of processing, objection and portability. You can also withdraw your consent and lodge a complaint with the Italian data protection authority (<strong>Garante per la protezione dei dati personali</strong>).' },
+
+    'priv.s7.h': { it: 'Cookie e archiviazione locale', en: 'Cookies and local storage' },
+    'priv.s7.b': { it: 'Questo sito <strong>non usa cookie di profilazione né strumenti di tracciamento</strong>. Salviamo nel tuo browser (localStorage) solo la lingua scelta. I font e le librerie grafiche sono caricati da CDN esterne (Google Fonts, Cloudflare), che possono registrare l’IP della richiesta.', en: 'This website <strong>uses no profiling cookies and no tracking tools</strong>. We only store your language preference in your browser (localStorage). Fonts and graphics libraries are loaded from external CDNs (Google Fonts, Cloudflare), which may log the request IP.' },
+
+    'priv.s8.h': { it: 'Domande', en: 'Questions' },
+    'priv.s8.b': { it: 'Per qualsiasi dubbio su questa policy o sui tuoi dati, scrivici dalla <a href="contatti.html">pagina contatti</a>. Rispondiamo entro <strong>24 ore lavorative</strong>.', en: 'For any question about this policy or your data, write to us via the <a href="contatti.html">contact page</a>. We reply within <strong>24 business hours</strong>.' }
   };
 
   /* ---------------- Apply translations ---------------- */

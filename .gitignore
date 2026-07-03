@@ -13,3 +13,7 @@ desktop.ini
 .env
 .env.local
 *.log
+
+# Generated / local-only
+graphify-out/
+bugs/

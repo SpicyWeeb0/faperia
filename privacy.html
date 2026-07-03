@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="priv.title">Privacy Policy — Faperia</title>
+  <meta name="description" data-i18n-attr="content:priv.meta" content="Come Faperia raccoglie, usa e protegge i tuoi dati personali." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://faperia.pages.dev/privacy" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Faperia" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:url" content="https://faperia.pages.dev/privacy" />
+  <meta property="og:title" content="Privacy Policy — Faperia" />
+  <meta property="og:description" content="Come Faperia raccoglie, usa e protegge i tuoi dati personali." />
+
+  <script>
+    (function(){
+      try {
+        var l = localStorage.getItem('faperia-lang');
+        if (l !== 'en' && l !== 'it') l = 'it';
+        document.documentElement.setAttribute('lang', l);
+      } catch(e) {}
+    })();
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="chat-widget.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+      <nav class="nav" id="mainNav">
+        <a href="cosa-facciamo.html" class="nav-link" data-i18n="nav.cosa">Cosa facciamo</a>
+        <a href="offerte.html" class="nav-link" data-i18n="nav.offerte">Offerte</a>
+        <a href="come-funziona.html" class="nav-link" data-i18n="nav.come">Come funziona</a>
+        <a href="chi-siamo.html" class="nav-link" data-i18n="nav.chi">Chi siamo</a>
+        <a href="contatti.html" class="nav-link" data-i18n="nav.contatti">Contatti</a>
+        <div class="lang-toggle">
+          <button data-lang="it" class="active">IT</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-i18n="priv.hero.h1">Privacy Policy</h1>
+        <p class="lead" data-i18n="priv.hero.lead">Questa pagina spiega quali dati personali raccogliamo attraverso questo sito, perché li raccogliamo e come li trattiamo. Ultimo aggiornamento: <strong>3 luglio 2026</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Policy body -->
+    <section class="reveal">
+      <div class="container" style="max-width:760px;">
+
+        <h2 data-i18n="priv.s1.h">Titolare del trattamento</h2>
+        <p data-i18n="priv.s1.b">Il titolare del trattamento è <strong>Faperia</strong> (Umbria, Italia). Per qualsiasi richiesta relativa ai tuoi dati puoi scriverci tramite la <a href="contatti.html">pagina contatti</a>.</p>
+
+        <h2 data-i18n="priv.s2.h">Quali dati raccogliamo</h2>
+        <p data-i18n="priv.s2.b"><strong>Questionario e moduli di contatto:</strong> nome, email, azienda, telefono (facoltativo), settore, dimensione, interesse, strumenti usati e il messaggio che scrivi. Li raccogliamo solo se compili e invii un modulo.<br><br><strong>Chat:</strong> i messaggi che invii all’assistente sul sito, usati solo per generare la risposta.<br><br><strong>Dati tecnici:</strong> l’indirizzo IP viene usato in forma temporanea per limitare l’abuso dei moduli (rate limiting) e non viene associato al tuo profilo.</p>
+
+        <h2 data-i18n="priv.s3.h">Perché li usiamo</h2>
+        <p data-i18n="priv.s3.b">Usiamo i dati esclusivamente per <strong>rispondere alla tua richiesta</strong> e ricontattarti in merito ai nostri servizi. Base giuridica: il tuo consenso (art. 6.1.a GDPR) e le misure precontrattuali adottate su tua richiesta (art. 6.1.b GDPR). Nessuna profilazione, nessuna cessione a terzi per marketing.</p>
+
+        <h2 data-i18n="priv.s4.h">Dove sono conservati</h2>
+        <p data-i18n="priv.s4.b">Il sito e i moduli sono gestiti tramite l’infrastruttura di <strong>Cloudflare</strong> (hosting, elaborazione e database), che agisce come responsabile del trattamento. Se in futuro attiveremo notifiche email, i dati potranno transitare da un fornitore di invio email, sempre nel rispetto del GDPR.</p>
+
+        <h2 data-i18n="priv.s5.h">Per quanto tempo</h2>
+        <p data-i18n="priv.s5.b">Conserviamo i dati per il tempo necessario a gestire la tua richiesta e l’eventuale rapporto di lavoro che ne segue. Puoi chiederne la cancellazione in qualsiasi momento.</p>
+
+        <h2 data-i18n="priv.s6.h">I tuoi diritti</h2>
+        <p data-i18n="priv.s6.b">Ai sensi degli artt. 15–22 GDPR puoi chiedere in qualsiasi momento: accesso ai tuoi dati, rettifica, cancellazione, limitazione del trattamento, opposizione e portabilità. Puoi inoltre revocare il consenso e presentare reclamo al <strong>Garante per la protezione dei dati personali</strong>.</p>
+
+        <h2 data-i18n="priv.s7.h">Cookie e archiviazione locale</h2>
+        <p data-i18n="priv.s7.b">Questo sito <strong>non usa cookie di profilazione né strumenti di tracciamento</strong>. Salviamo nel tuo browser (localStorage) solo la lingua scelta. I font e le librerie grafiche sono caricati da CDN esterne (Google Fonts, Cloudflare), che possono registrare l’IP della richiesta.</p>
+
+        <h2 data-i18n="priv.s8.h">Domande</h2>
+        <p data-i18n="priv.s8.b">Per qualsiasi dubbio su questa policy o sui tuoi dati, scrivici dalla <a href="contatti.html">pagina contatti</a>. Rispondiamo entro <strong>24 ore lavorative</strong>.</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Faper<span class="accent-tail">ia</span></a>
+          <p data-i18n="footer.tagline">Digitale, automazione, AI per le PMI italiane.</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col1">Sito</h4>
+          <ul>
+            <li><a href="cosa-facciamo.html" data-i18n="nav.cosa">Cosa facciamo</a></li>
+            <li><a href="offerte.html" data-i18n="nav.offerte">Offerte</a></li>
+            <li><a href="come-funziona.html" data-i18n="nav.come">Come funziona</a></li>
+            <li><a href="chi-siamo.html" data-i18n="nav.chi">Chi siamo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col2">Contatti</h4>
+          <ul>
+            <li><a href="contatti.html" data-i18n="nav.contatti">Contatti</a></li>
+            <li><a href="https://www.linkedin.com/company/faperia" data-i18n="footer.linkedin">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.col3">Studio</h4>
+          <ul>
+            <li><span data-i18n="footer.studio">Umbria, Italia</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copy">© 2026 Faperia. Tutti i diritti riservati.</span>
+        <span><a href="privacy.html" data-i18n="footer.privacy">Privacy</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script src="chat-widget.js" defer></script>
+</body>
+</html>
