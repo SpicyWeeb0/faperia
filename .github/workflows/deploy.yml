@@ -1,0 +1,27 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      # Publish only the site assets, not repo housekeeping files
+      - name: Stage site files
+        run: |
+          mkdir -p _site
+          cp *.html *.css *.js favicon.svg robots.txt sitemap.xml _site/
+
+      - name: Deploy to Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 9103ff696c317001c99a9c0a090412f8
+          command: pages deploy _site --project-name=faperia --branch=main
